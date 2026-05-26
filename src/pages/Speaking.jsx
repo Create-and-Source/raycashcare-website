@@ -87,9 +87,9 @@ export default function Speaking() {
           {topics.map(({ icon: Icon, title, desc }) => (
             <StaggerItem key={title}>
               <motion.div
-                whileHover={{ y: -4, borderColor: 'rgba(90,122,43,0.6)', boxShadow: '0 0 12px rgba(90,122,43,0.3)' }}
+                whileHover={{ y: -4, borderColor: 'rgba(90,122,43,0.6)', boxShadow: '0 0 5px rgba(90,122,43,0.2)' }}
                 transition={{ duration: 0.2 }}
-                className="bg-dark-2 border border-green/20 p-8 h-full shadow-[0_0_8px_rgba(90,122,43,0.2)]"
+                className="bg-dark-2 border border-green/20 p-8 h-full shadow-[0_0_3px_rgba(90,122,43,0.15)]"
               >
                 <motion.div
                   whileHover={{ rotate: [0, -10, 10, 0] }}
@@ -118,7 +118,7 @@ export default function Speaking() {
               <motion.div
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.2 }}
-                className="bg-dark border border-green/40 shadow-[0_0_8px_rgba(90,122,43,0.2)] hover:border-green/20 transition-colors"
+                className="bg-dark border border-green/40 shadow-[0_0_3px_rgba(90,122,43,0.15)] hover:border-green/20 transition-colors"
               >
                 <LazyYouTube id={id} title={title} />
                 <div className="p-4">
@@ -140,8 +140,8 @@ export default function Speaking() {
           {allClients.map((client) => (
             <StaggerItem key={client}>
               <motion.div
-                whileHover={{ scale: 1.05, boxShadow: '0 0 12px rgba(90,122,43,0.3)' }}
-                className="bg-dark-2 border border-green/40 shadow-[0_0_8px_rgba(90,122,43,0.2)] px-6 py-4 cursor-default"
+                whileHover={{ scale: 1.05, boxShadow: '0 0 5px rgba(90,122,43,0.2)' }}
+                className="bg-dark-2 border border-green/40 shadow-[0_0_3px_rgba(90,122,43,0.15)] px-6 py-4 cursor-default"
               >
                 <span className="text-white text-sm font-bold uppercase tracking-wider">{client}</span>
               </motion.div>
