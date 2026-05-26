@@ -254,7 +254,7 @@ export default function Home() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="bg-dark border-y border-white/5 py-8 overflow-hidden"
+        className="bg-[#2a2a2a] border-y border-white/5 py-8 overflow-hidden"
       >
         <div className="max-w-7xl mx-auto px-6">
           <p className="text-center text-gray-2 text-xs font-bold uppercase tracking-[0.3em] mb-6">As Seen On</p>
