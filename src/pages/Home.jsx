@@ -189,7 +189,7 @@ export default function Home() {
               <MagneticButton>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-[0_0_5px_rgba(90,122,43,0.2)]"
+                  className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-[0_0_35px_rgba(90,122,43,0.45),0_0_80px_rgba(90,122,43,0.2)]"
                 >
                   Contact Ray <ArrowRight size={16} />
                 </Link>
@@ -281,7 +281,7 @@ export default function Home() {
             <StaggerItem key={title}>
               <Link
                 to={link}
-                className="group block bg-dark-2 border border-green/20 p-8 no-underline transition-all hover:-translate-y-1 shadow-[0_0_10px_rgba(90,122,43,0.12)] hover:shadow-[0_0_5px_rgba(90,122,43,0.2)]"
+                className="group block bg-dark-2 border border-green/30 p-8 no-underline transition-all hover:-translate-y-1 shadow-[0_0_25px_rgba(90,122,43,0.35),0_0_60px_rgba(90,122,43,0.15)] hover:shadow-[0_0_35px_rgba(90,122,43,0.45),0_0_80px_rgba(90,122,43,0.2)]"
               >
                 <motion.div
                   whileHover={{ rotate: [0, -10, 10, 0] }}
@@ -318,7 +318,7 @@ export default function Home() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto border border-green/15 shadow-[0_0_10px_rgba(90,122,43,0.12)] hover:border-green/20 transition-colors"
+          className="max-w-4xl mx-auto border border-green/30 shadow-[0_0_25px_rgba(90,122,43,0.35),0_0_60px_rgba(90,122,43,0.15)] hover:border-green/30 transition-colors"
         >
           <LazyYouTube id="7FqDLgh1HkA" title="Ray Cash Care — Navy SEAL Reveals #1 Rule To Stay Alive" />
         </motion.div>
@@ -342,7 +342,7 @@ export default function Home() {
               <motion.div
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.2 }}
-                className="bg-dark-2 border border-green/15 shadow-[0_0_10px_rgba(90,122,43,0.12)] hover:border-green/20 p-8 transition-colors h-full"
+                className="bg-dark-2 border border-green/30 shadow-[0_0_25px_rgba(90,122,43,0.35),0_0_60px_rgba(90,122,43,0.15)] hover:border-green/30 p-8 transition-colors h-full"
               >
                 <motion.div
                   initial={{ scale: 0 }}
@@ -381,9 +381,9 @@ export default function Home() {
           {associates.map(({ name, title, src }) => (
             <StaggerItem key={name}>
               <motion.div
-                whileHover={{ y: -4, borderColor: 'rgba(90,122,43,0.6)', boxShadow: '0 0 15px rgba(90,122,43,0.18)' }}
+                whileHover={{ y: -4, borderColor: 'rgba(90,122,43,0.6)', boxShadow: '0 0 35px rgba(90,122,43,0.45), 0 0 80px rgba(90,122,43,0.2)' }}
                 transition={{ duration: 0.2 }}
-                className="bg-dark-2 border border-green/15 shadow-[0_0_10px_rgba(90,122,43,0.12)] p-6 text-center"
+                className="bg-dark-2 border border-green/30 shadow-[0_0_25px_rgba(90,122,43,0.35),0_0_60px_rgba(90,122,43,0.15)] p-6 text-center"
               >
                 <img
                   src={src}
@@ -430,7 +430,7 @@ export default function Home() {
               <MagneticButton>
                 <a
                   href="#"
-                  className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-[0_0_5px_rgba(90,122,43,0.2)]"
+                  className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-[0_0_35px_rgba(90,122,43,0.45),0_0_80px_rgba(90,122,43,0.2)]"
                 >
                   Get the Book <ArrowRight size={16} />
                 </a>
@@ -492,7 +492,7 @@ export default function Home() {
             <MagneticButton>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-[0_0_5px_rgba(90,122,43,0.2)]"
+                className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-[0_0_35px_rgba(90,122,43,0.45),0_0_80px_rgba(90,122,43,0.2)]"
               >
                 Book Ray Now <ArrowRight size={16} />
               </Link>

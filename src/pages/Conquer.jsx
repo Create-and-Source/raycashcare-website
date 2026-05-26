@@ -54,7 +54,7 @@ export default function Conquer() {
                   href="https://raycashcarecommunity.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-[0_0_5px_rgba(90,122,43,0.2)]"
+                  className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-[0_0_35px_rgba(90,122,43,0.45),0_0_80px_rgba(90,122,43,0.2)]"
                 >
                   Join CONQUER <ArrowRight size={16} />
                 </a>
@@ -80,7 +80,7 @@ export default function Conquer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-dark-2 border border-green/15 p-8 text-center shadow-[0_0_10px_rgba(90,122,43,0.12)]"
+              className="bg-dark-2 border border-green/30 p-8 text-center shadow-[0_0_25px_rgba(90,122,43,0.35),0_0_60px_rgba(90,122,43,0.15)]"
             >
               <div className="w-14 h-14 bg-green/10 flex items-center justify-center mx-auto mb-4">
                 <Icon size={28} className="text-green" />
@@ -143,7 +143,7 @@ export default function Conquer() {
                 href="https://raycashcarecommunity.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-[0_0_5px_rgba(90,122,43,0.2)]"
+                className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-[0_0_35px_rgba(90,122,43,0.45),0_0_80px_rgba(90,122,43,0.2)]"
               >
                 Join CONQUER Now <ArrowRight size={16} />
               </a>

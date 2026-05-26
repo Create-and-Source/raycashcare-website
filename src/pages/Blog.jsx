@@ -101,17 +101,17 @@ export default function Blog() {
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ y: -6, boxShadow: '0 0 15px rgba(90,122,43,0.18)' }}
+              whileHover={{ y: -6, boxShadow: '0 0 35px rgba(90,122,43,0.45), 0 0 80px rgba(90,122,43,0.2)' }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="group relative bg-dark-2 border border-green/15 shadow-[0_0_10px_rgba(90,122,43,0.12)] no-underline transition-all overflow-hidden"
+              className="group relative bg-dark-2 border border-green/30 shadow-[0_0_25px_rgba(90,122,43,0.35),0_0_60px_rgba(90,122,43,0.15)] no-underline transition-all overflow-hidden"
             >
               {/* Shimmer effect */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                 style={{ background: 'linear-gradient(105deg, transparent 35%, rgba(90,122,43,0.3) 42%, rgba(90,122,43,0.6) 50%, rgba(90,122,43,0.3) 58%, transparent 65%)', backgroundSize: '200% 100%', animation: 'shimmer 1.5s infinite' }}
               />
               {/* Category banner */}
-              <div className="h-32 bg-gradient-to-br from-green/35 via-dark-3 to-dark-2 flex items-center justify-center border-b border-green/20">
+              <div className="h-32 bg-gradient-to-br from-green/35 via-dark-3 to-dark-2 flex items-center justify-center border-b border-green/30">
                 <span className="text-green text-lg font-black uppercase tracking-[0.3em]">{category}</span>
               </div>
               <div className="p-8">
