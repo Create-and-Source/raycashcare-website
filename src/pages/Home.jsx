@@ -206,6 +206,20 @@ export default function Home() {
           </motion.div>
         </div>
 
+        {/* Portrait — mobile only, below text */}
+        <motion.div
+          className="relative z-[4] flex justify-center md:hidden -mt-8"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 1.8, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <img
+            src="/images/hero-portrait.webp"
+            alt="Ray Cash Care"
+            className="h-[50vh] w-auto object-contain object-bottom"
+          />
+        </motion.div>
+
         {/* Scroll indicator */}
         <motion.div
           className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"

@@ -40,7 +40,7 @@ export default function Speaking() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
         <div className="absolute right-0 top-0 bottom-0 w-[45%] hidden md:block">
-          <img src="/images/portrait-blazer.webp" alt="Ray Cash Care" className="h-full w-full object-contain object-bottom opacity-80" />
+          <img src="/images/portrait-blazer.webp" alt="Ray Cash Care" className="h-full w-full object-cover object-top opacity-80" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-transparent" />
         </div>
         <div className="relative max-w-7xl mx-auto">
