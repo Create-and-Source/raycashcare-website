@@ -94,7 +94,7 @@ export default function Press() {
             Major appearances
           </h2>
         </div>
-        <StaggerContainer className="grid grid-cols-2 gap-4 md:gap-8">
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
           {majorAppearances.map(({ icon: Icon, title, subtitle, desc, image }) => (
             <StaggerItem key={title}>
               <motion.div
@@ -103,7 +103,7 @@ export default function Press() {
                 className="bg-dark-2 border border-green/30 shadow-[0_0_25px_rgba(90,122,43,0.35),0_0_60px_rgba(90,122,43,0.15)] hover:border-green/30 overflow-hidden transition-colors"
               >
                 {image && (
-                  <div className="h-48 overflow-hidden">
+                  <div className="h-32 md:h-48 overflow-hidden">
                     <motion.img
                       src={image}
                       alt={title}
@@ -113,13 +113,13 @@ export default function Press() {
                     />
                   </div>
                 )}
-                <div className="p-8">
-                  <div className="w-12 h-12 bg-green/10 flex items-center justify-center mb-5">
-                    <Icon size={24} className="text-green" />
+                <div className="p-4 md:p-8">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-green/10 flex items-center justify-center mb-3 md:mb-5">
+                    <Icon size={20} className="text-green" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-1">{title}</h3>
-                  <p className="text-green text-xs font-bold uppercase tracking-widest mb-3">{subtitle}</p>
-                  <p className="text-gray-3 text-sm leading-relaxed">{desc}</p>
+                  <h3 className="text-base md:text-xl font-bold text-white mb-1">{title}</h3>
+                  <p className="text-green text-xs font-bold uppercase tracking-widest mb-2 md:mb-3">{subtitle}</p>
+                  <p className="text-gray-3 text-xs md:text-sm leading-relaxed">{desc}</p>
                 </div>
               </motion.div>
             </StaggerItem>
