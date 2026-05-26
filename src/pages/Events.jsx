@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowRight, Calendar, MapPin, Clock } from 'lucide-react'
 import Section from '../components/Section'
+import TextReveal from '../components/TextReveal'
+import MagneticButton from '../components/MagneticButton'
+import { StaggerContainer, StaggerItem } from '../components/StaggerChildren'
 
 const upcomingEvents = [
   {
@@ -33,8 +36,13 @@ export default function Events() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-20 px-6 bg-black">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative pt-32 pb-20 px-6 bg-black overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: 'url(/images/q-course.webp)', filter: 'brightness(0.1) contrast(1.2)' }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/60" />
+        <div className="relative max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

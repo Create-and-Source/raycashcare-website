@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -17,15 +17,33 @@ const links = [
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/5">
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 no-underline">
-          <span className="text-2xl font-black tracking-tight text-white uppercase">
-            Ray <span className="text-green">"Cash"</span> Care
-          </span>
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, delay: 1.4, ease: [0.16, 1, 0.3, 1] }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? 'bg-black/95 backdrop-blur-xl border-b border-white/5 shadow-lg shadow-black/20'
+          : 'bg-transparent border-b border-transparent'
+      }`}
+    >
+      <div className={`max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-500 ${
+        scrolled ? 'h-16' : 'h-20'
+      }`}>
+        <Link to="/" className="flex items-center gap-3 no-underline group">
+          <motion.div whileHover={{ scale: 1.02 }} className="flex items-center gap-3">
+            <img src="/images/logo.webp" alt="RCC" className="h-8" />
+          </motion.div>
         </Link>
 
         {/* Desktop */}
@@ -34,24 +52,32 @@ export default function Nav() {
             <Link
               key={to}
               to={to}
-              className={`px-4 py-2 text-sm font-medium tracking-wide uppercase no-underline transition-colors ${
+              className={`relative px-4 py-2 text-sm font-medium tracking-wide uppercase no-underline transition-colors ${
                 location.pathname === to
                   ? 'text-green'
                   : 'text-gray-3 hover:text-white'
               }`}
             >
               {label}
+              {location.pathname === to && (
+                <motion.div
+                  layoutId="nav-indicator"
+                  className="absolute bottom-0 left-2 right-2 h-0.5 bg-green"
+                  transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                />
+              )}
             </Link>
           ))}
         </div>
 
         {/* Mobile toggle */}
-        <button
+        <motion.button
+          whileTap={{ scale: 0.9 }}
           onClick={() => setOpen(!open)}
           className="lg:hidden text-white bg-transparent border-none cursor-pointer p-2"
         >
           {open ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        </motion.button>
       </div>
 
       {/* Mobile menu */}
@@ -61,27 +87,34 @@ export default function Nav() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-dark border-b border-white/5 overflow-hidden"
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:hidden bg-black/95 backdrop-blur-xl border-b border-white/5 overflow-hidden"
           >
             <div className="px-6 py-4 flex flex-col gap-1">
-              {links.map(({ to, label }) => (
-                <Link
+              {links.map(({ to, label }, i) => (
+                <motion.div
                   key={to}
-                  to={to}
-                  onClick={() => setOpen(false)}
-                  className={`px-4 py-3 text-sm font-medium tracking-wide uppercase no-underline rounded-lg transition-colors ${
-                    location.pathname === to
-                      ? 'text-green bg-white/5'
-                      : 'text-gray-3 hover:text-white hover:bg-white/5'
-                  }`}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 }}
                 >
-                  {label}
-                </Link>
+                  <Link
+                    to={to}
+                    onClick={() => setOpen(false)}
+                    className={`block px-4 py-3 text-sm font-medium tracking-wide uppercase no-underline rounded-lg transition-colors ${
+                      location.pathname === to
+                        ? 'text-green bg-white/5'
+                        : 'text-gray-3 hover:text-white hover:bg-white/5'
+                    }`}
+                  >
+                    {label}
+                  </Link>
+                </motion.div>
               ))}
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </motion.nav>
   )
 }

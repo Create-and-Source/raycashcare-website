@@ -3,6 +3,10 @@ import { motion } from 'framer-motion'
 import { ArrowRight, Mic, Users, Target, Dumbbell, Brain, Flame } from 'lucide-react'
 import Section from '../components/Section'
 import LazyYouTube from '../components/LazyYouTube'
+import TextReveal from '../components/TextReveal'
+import LineReveal from '../components/LineReveal'
+import MagneticButton from '../components/MagneticButton'
+import { StaggerContainer, StaggerItem } from '../components/StaggerChildren'
 
 const topics = [
   { icon: Target, title: 'Leadership Under Pressure', desc: 'How SEAL team principles translate to corporate leadership. Decision-making, composure, and leading from the front when everything is on the line.' },
@@ -28,29 +32,41 @@ export default function Speaking() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-20 px-6 bg-black">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative pt-32 pb-20 px-6 bg-black overflow-hidden">
+        <div className="absolute right-0 top-0 bottom-0 w-1/3 hidden lg:block">
+          <img src="/images/portrait-blazer.webp" alt="Ray Cash Care" className="h-full w-full object-cover object-top opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
+        </div>
+        <div className="relative max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <p className="text-green font-bold text-xs tracking-[0.3em] uppercase mb-4">Speaking</p>
-            <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-6">
-              Ignite your<br />organization
-            </h1>
-            <p className="text-gray-3 text-lg leading-relaxed mb-8">
+            <motion.p initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1.5 }} className="text-green font-bold text-xs tracking-[0.3em] uppercase mb-4">Speaking</motion.p>
+            <TextReveal delay={1.6}>
+              <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-2">Ignite your</h1>
+            </TextReveal>
+            <TextReveal delay={1.8}>
+              <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-6">organization</h1>
+            </TextReveal>
+            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.1 }} className="text-gray-3 text-lg leading-relaxed mb-8">
               Ray delivers high-energy, high-impact keynotes that don't just motivate — they transform.
               From Fortune 500 boardrooms to military bases to youth conferences, Ray brings the
               intensity and authenticity that only a decade on SEAL teams can forge.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all"
-            >
-              Inquire About Booking <ArrowRight size={16} />
-            </Link>
+            </motion.p>
+            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 2.3 }}>
+              <MagneticButton>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-lg hover:shadow-green/20"
+                >
+                  Inquire About Booking <ArrowRight size={16} />
+                </Link>
+              </MagneticButton>
+            </motion.div>
+            <LineReveal className="mt-8" delay={2.4} />
           </motion.div>
         </div>
       </section>
@@ -58,84 +74,104 @@ export default function Speaking() {
       {/* Topics */}
       <Section dark>
         <div className="text-center mb-16">
-          <p className="text-green font-bold text-xs tracking-[0.3em] uppercase mb-3">Topics</p>
-          <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white">
-            What Ray speaks on
-          </h2>
+          <TextReveal><p className="text-green font-bold text-xs tracking-[0.3em] uppercase mb-3">Topics</p></TextReveal>
+          <TextReveal delay={0.1}><h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white">What Ray speaks on</h2></TextReveal>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {topics.map(({ icon: Icon, title, desc }, i) => (
-            <motion.div
-              key={title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="bg-dark-2 border border-white/5 p-8"
-            >
-              <div className="w-12 h-12 bg-green/10 flex items-center justify-center mb-5">
-                <Icon size={24} className="text-green" />
-              </div>
-              <h3 className="text-lg font-bold uppercase tracking-wide text-white mb-3">{title}</h3>
-              <p className="text-gray-3 text-sm leading-relaxed">{desc}</p>
-            </motion.div>
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {topics.map(({ icon: Icon, title, desc }) => (
+            <StaggerItem key={title}>
+              <motion.div
+                whileHover={{ y: -4, borderColor: 'rgba(90,122,43,0.3)' }}
+                transition={{ duration: 0.2 }}
+                className="bg-dark-2 border border-white/5 p-8 h-full"
+              >
+                <motion.div
+                  whileHover={{ rotate: [0, -10, 10, 0] }}
+                  transition={{ duration: 0.4 }}
+                  className="w-12 h-12 bg-green/10 flex items-center justify-center mb-5"
+                >
+                  <Icon size={24} className="text-green" />
+                </motion.div>
+                <h3 className="text-lg font-bold uppercase tracking-wide text-white mb-3">{title}</h3>
+                <p className="text-gray-3 text-sm leading-relaxed">{desc}</p>
+              </motion.div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </Section>
 
       {/* Video Clips */}
       <Section>
         <div className="text-center mb-12">
-          <p className="text-green font-bold text-xs tracking-[0.3em] uppercase mb-3">Watch</p>
-          <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white">
-            Ray on stage
-          </h2>
+          <TextReveal><p className="text-green font-bold text-xs tracking-[0.3em] uppercase mb-3">Watch</p></TextReveal>
+          <TextReveal delay={0.1}><h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white">Ray on stage</h2></TextReveal>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {videos.map(({ id, title }) => (
-            <div key={id} className="bg-dark border border-white/5">
-              <LazyYouTube id={id} title={title} />
-              <div className="p-4">
-                <p className="text-white text-sm font-bold">{title}</p>
-              </div>
-            </div>
+            <StaggerItem key={id}>
+              <motion.div
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.2 }}
+                className="bg-dark border border-white/5 hover:border-green/20 transition-colors"
+              >
+                <LazyYouTube id={id} title={title} />
+                <div className="p-4">
+                  <p className="text-white text-sm font-bold">{title}</p>
+                </div>
+              </motion.div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </Section>
 
       {/* Past Clients */}
       <Section dark>
         <div className="text-center mb-12">
-          <p className="text-green font-bold text-xs tracking-[0.3em] uppercase mb-3">Trusted By</p>
-          <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white">
-            Organizations that book Ray
-          </h2>
+          <TextReveal><p className="text-green font-bold text-xs tracking-[0.3em] uppercase mb-3">Trusted By</p></TextReveal>
+          <TextReveal delay={0.1}><h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white">Organizations that book Ray</h2></TextReveal>
         </div>
-        <div className="flex flex-wrap items-center justify-center gap-6">
+        <StaggerContainer className="flex flex-wrap items-center justify-center gap-6">
           {clients.map((client) => (
-            <div key={client} className="bg-dark-2 border border-white/5 px-6 py-4">
-              <span className="text-gray-3 text-sm font-bold uppercase tracking-wider">{client}</span>
-            </div>
+            <StaggerItem key={client}>
+              <motion.div
+                whileHover={{ scale: 1.05, borderColor: 'rgba(90,122,43,0.3)' }}
+                className="bg-dark-2 border border-white/5 px-6 py-4 cursor-default"
+              >
+                <span className="text-gray-3 text-sm font-bold uppercase tracking-wider">{client}</span>
+              </motion.div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </Section>
 
       {/* CTA */}
       <Section>
         <div className="text-center">
-          <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white mb-6">
-            Bring Ray to your event
-          </h2>
-          <p className="text-gray-3 text-lg max-w-2xl mx-auto mb-10">
+          <TextReveal>
+            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white mb-6">
+              Bring Ray to your event
+            </h2>
+          </TextReveal>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-gray-3 text-lg max-w-2xl mx-auto mb-10"
+          >
             Whether it's a corporate conference, team retreat, or community event — Ray brings
             the fire. Fill out the inquiry form and let's make it happen.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all"
-          >
-            Book Ray Now <ArrowRight size={16} />
-          </Link>
+          </motion.p>
+          <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}>
+            <MagneticButton>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-lg hover:shadow-green/20"
+              >
+                Book Ray Now <ArrowRight size={16} />
+              </Link>
+            </MagneticButton>
+          </motion.div>
         </div>
       </Section>
     </>

@@ -38,8 +38,12 @@ export default function Contact() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-20 px-6 bg-black">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative pt-32 pb-20 px-6 bg-black overflow-hidden">
+        <div className="absolute right-0 top-0 bottom-0 w-1/3 hidden lg:block">
+          <img src="/images/portrait-dark-blazer.webp" alt="Ray Cash Care" className="h-full w-full object-contain object-right-bottom opacity-30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
+        </div>
+        <div className="relative max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

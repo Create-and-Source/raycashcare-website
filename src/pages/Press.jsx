@@ -2,6 +2,8 @@ import { motion } from 'framer-motion'
 import { ExternalLink, Film, Tv, Radio } from 'lucide-react'
 import Section from '../components/Section'
 import LazyYouTube from '../components/LazyYouTube'
+import TextReveal from '../components/TextReveal'
+import { StaggerContainer, StaggerItem } from '../components/StaggerChildren'
 
 const majorAppearances = [
   {
@@ -9,24 +11,28 @@ const majorAppearances = [
     title: 'Captain Phillips',
     subtitle: 'Feature Film — 2013',
     desc: 'Starred alongside Tom Hanks in the critically acclaimed biographical action film directed by Paul Greengrass.',
+    image: '/images/captain-phillips.webp',
   },
   {
     icon: Tv,
     title: 'The Selection',
     subtitle: 'History Channel',
     desc: 'Featured as an instructor on the History Channel\'s intense military training competition series.',
+    image: '/images/the-selection.webp',
   },
   {
     icon: Tv,
     title: 'Ultimate Hell Week',
     subtitle: 'BBC',
     desc: 'Brought SEAL-level intensity to the BBC\'s grueling military challenge show.',
+    image: null,
   },
   {
     icon: Film,
     title: 'Navy Indoctrination Film',
     subtitle: 'U.S. Navy Official',
     desc: 'Selected by the United States Navy as the ambassador featured in the official "Indoctrination" film shown to all recruits at Great Lakes Naval Recruit Training Command.',
+    image: null,
   },
 ]
 
@@ -76,25 +82,37 @@ export default function Press() {
             Major appearances
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {majorAppearances.map(({ icon: Icon, title, subtitle, desc }, i) => (
-            <motion.div
-              key={title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="bg-dark-2 border border-white/5 p-8"
-            >
-              <div className="w-12 h-12 bg-green/10 flex items-center justify-center mb-5">
-                <Icon size={24} className="text-green" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-1">{title}</h3>
-              <p className="text-green text-xs font-bold uppercase tracking-widest mb-3">{subtitle}</p>
-              <p className="text-gray-3 text-sm leading-relaxed">{desc}</p>
-            </motion.div>
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {majorAppearances.map(({ icon: Icon, title, subtitle, desc, image }) => (
+            <StaggerItem key={title}>
+              <motion.div
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.2 }}
+                className="bg-dark-2 border border-white/5 hover:border-green/20 overflow-hidden transition-colors"
+              >
+                {image && (
+                  <div className="h-48 overflow-hidden">
+                    <motion.img
+                      src={image}
+                      alt={title}
+                      className="w-full h-full object-cover"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.4 }}
+                    />
+                  </div>
+                )}
+                <div className="p-8">
+                  <div className="w-12 h-12 bg-green/10 flex items-center justify-center mb-5">
+                    <Icon size={24} className="text-green" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-1">{title}</h3>
+                  <p className="text-green text-xs font-bold uppercase tracking-widest mb-3">{subtitle}</p>
+                  <p className="text-gray-3 text-sm leading-relaxed">{desc}</p>
+                </div>
+              </motion.div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </Section>
 
       {/* Press Logos */}
