@@ -99,9 +99,9 @@ export default function Home() {
         {/* Bottom fade */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent z-[2]" />
 
-        {/* Portrait — anchored bottom center on mobile, bottom right on desktop */}
+        {/* Portrait — desktop: anchored bottom right */}
         <motion.div
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-0 lg:right-[5%] xl:right-[8%] z-[3]"
+          className="absolute bottom-0 right-0 lg:right-[5%] xl:right-[8%] z-[3] hidden md:block"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 1.8, ease: [0.16, 1, 0.3, 1] }}
@@ -109,15 +109,15 @@ export default function Home() {
           <motion.img
             src="/images/hero-portrait.webp"
             alt="Ray Cash Care"
-            className="h-[70vh] md:h-[85vh] max-h-[900px] w-auto object-contain object-bottom"
+            className="h-[85vh] max-h-[900px] w-auto object-contain object-bottom"
             style={{ scale: heroScale }}
           />
         </motion.div>
 
         {/* Text content — left side */}
-        <div className="relative z-[4] max-w-7xl mx-auto px-6 w-full min-h-screen flex items-center">
+        <div className="relative z-[4] max-w-7xl mx-auto px-6 w-full min-h-[60vh] md:min-h-screen flex items-center">
           <motion.div
-            className="max-w-2xl py-32"
+            className="max-w-2xl pt-28 pb-8 md:py-32"
             style={{ opacity: heroOpacity }}
           >
             {/* Main heading */}
@@ -262,7 +262,7 @@ export default function Home() {
             </h2>
           </TextReveal>
         </div>
-        <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
           {services.map(({ icon: Icon, title, desc, link }) => (
             <StaggerItem key={title}>
               <Link
