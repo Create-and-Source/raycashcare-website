@@ -88,7 +88,7 @@ export default function Contact() {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-widest text-gray-3 mb-2">
                       Full Name *
@@ -130,7 +130,7 @@ export default function Contact() {
                   />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-widest text-gray-3 mb-2">
                       Event Type *
@@ -202,7 +202,7 @@ export default function Contact() {
 
           {/* Sidebar */}
           <div className="space-y-8">
-            <div className="bg-dark-2 border border-green/40 shadow-[0_0_80px_rgba(90,122,43,0.8),0_0_200px_rgba(90,122,43,0.5),0_0_350px_rgba(90,122,43,0.25)] p-8">
+            <div className="bg-dark-2 border border-green/40 shadow-[0_0_20px_rgba(90,122,43,0.15)] p-8">
               <h3 className="text-lg font-bold text-white mb-4 uppercase">Get in Touch</h3>
               <div className="space-y-4">
                 <a
@@ -230,7 +230,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-dark-2 border border-green/40 shadow-[0_0_80px_rgba(90,122,43,0.8),0_0_200px_rgba(90,122,43,0.5),0_0_350px_rgba(90,122,43,0.25)] p-8">
+            <div className="bg-dark-2 border border-green/40 shadow-[0_0_20px_rgba(90,122,43,0.15)] p-8">
               <h3 className="text-lg font-bold text-white mb-4 uppercase">Speaker Bureaus</h3>
               <div className="space-y-3">
                 {[

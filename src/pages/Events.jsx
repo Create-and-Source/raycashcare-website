@@ -69,7 +69,7 @@ export default function Events() {
             What's next
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {upcomingEvents.map(({ title, date, location, type, desc }, i) => (
             <motion.div
               key={i}
@@ -77,7 +77,7 @@ export default function Events() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-dark-2 border border-green/40 shadow-[0_0_80px_rgba(90,122,43,0.8),0_0_200px_rgba(90,122,43,0.5),0_0_350px_rgba(90,122,43,0.25)] p-8"
+              className="bg-dark-2 border border-green/40 shadow-[0_0_20px_rgba(90,122,43,0.15)] p-8"
             >
               <span className="text-green text-xs font-bold uppercase tracking-widest">{type}</span>
               <h3 className="text-xl font-bold text-white mt-2 mb-4">{title}</h3>
@@ -103,7 +103,7 @@ export default function Events() {
             Past highlights
           </h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {pastHighlights.map(({ title, desc }, i) => (
             <motion.div
               key={i}
@@ -111,7 +111,7 @@ export default function Events() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="bg-dark border border-green/40 shadow-[0_0_80px_rgba(90,122,43,0.8),0_0_200px_rgba(90,122,43,0.5),0_0_350px_rgba(90,122,43,0.25)] p-6"
+              className="bg-dark border border-green/40 shadow-[0_0_20px_rgba(90,122,43,0.15)] p-6"
             >
               <h3 className="text-white font-bold mb-2">{title}</h3>
               <p className="text-gray-3 text-sm leading-relaxed">{desc}</p>

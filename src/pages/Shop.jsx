@@ -38,7 +38,7 @@ export default function Shop() {
 
       {/* Products Grid */}
       <Section dark>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {products.map(({ name, price, category }, i) => (
             <motion.div
               key={name}
@@ -46,7 +46,7 @@ export default function Shop() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="group bg-dark-2 border border-green/40 shadow-[0_0_80px_rgba(90,122,43,0.8),0_0_200px_rgba(90,122,43,0.5),0_0_350px_rgba(90,122,43,0.25)] hover:border-green/30 transition-all cursor-pointer"
+              className="group bg-dark-2 border border-green/40 shadow-[0_0_20px_rgba(90,122,43,0.15)] hover:border-green/30 transition-all cursor-pointer"
             >
               <div className="aspect-square bg-dark-3 flex items-center justify-center relative overflow-hidden">
                 <ShoppingBag size={40} className="text-gray-2" />

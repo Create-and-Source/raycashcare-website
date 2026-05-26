@@ -262,12 +262,12 @@ export default function Home() {
             </h2>
           </TextReveal>
         </div>
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map(({ icon: Icon, title, desc, link }) => (
             <StaggerItem key={title}>
               <Link
                 to={link}
-                className="group block bg-dark-2 border border-green/20 p-8 no-underline transition-all hover:-translate-y-1 shadow-[0_0_80px_rgba(90,122,43,0.8),0_0_200px_rgba(90,122,43,0.5),0_0_350px_rgba(90,122,43,0.25)] hover:shadow-[0_0_120px_rgba(90,122,43,1),0_0_300px_rgba(90,122,43,0.6),0_0_500px_rgba(90,122,43,0.3)]"
+                className="group block bg-dark-2 border border-green/20 p-8 no-underline transition-all hover:-translate-y-1 shadow-[0_0_20px_rgba(90,122,43,0.15)] hover:shadow-[0_0_120px_rgba(90,122,43,1),0_0_300px_rgba(90,122,43,0.6),0_0_500px_rgba(90,122,43,0.3)]"
               >
                 <motion.div
                   whileHover={{ rotate: [0, -10, 10, 0] }}
@@ -304,7 +304,7 @@ export default function Home() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto border border-green/40 shadow-[0_0_80px_rgba(90,122,43,0.8),0_0_200px_rgba(90,122,43,0.5),0_0_350px_rgba(90,122,43,0.25)] hover:border-green/20 transition-colors"
+          className="max-w-4xl mx-auto border border-green/40 shadow-[0_0_20px_rgba(90,122,43,0.15)] hover:border-green/20 transition-colors"
         >
           <LazyYouTube id="7FqDLgh1HkA" title="Ray Cash Care — Navy SEAL Reveals #1 Rule To Stay Alive" />
         </motion.div>
@@ -322,13 +322,13 @@ export default function Home() {
             </h2>
           </TextReveal>
         </div>
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map(({ quote, name, company }, i) => (
             <StaggerItem key={i}>
               <motion.div
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.2 }}
-                className="bg-dark-2 border border-green/40 shadow-[0_0_80px_rgba(90,122,43,0.8),0_0_200px_rgba(90,122,43,0.5),0_0_350px_rgba(90,122,43,0.25)] hover:border-green/20 p-8 transition-colors h-full"
+                className="bg-dark-2 border border-green/40 shadow-[0_0_20px_rgba(90,122,43,0.15)] hover:border-green/20 p-8 transition-colors h-full"
               >
                 <motion.div
                   initial={{ scale: 0 }}
@@ -363,13 +363,13 @@ export default function Home() {
             </h2>
           </TextReveal>
         </div>
-        <StaggerContainer className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+        <StaggerContainer className="grid grid-cols-2 sm:grid-cols-4 gap-8">
           {associates.map(({ name, title, src }) => (
             <StaggerItem key={name}>
               <motion.div
-                whileHover={{ y: -4, borderColor: 'rgba(90,122,43,0.6)', boxShadow: '0 0 120px rgba(90,122,43,1), 0 0 300px rgba(90,122,43,0.6), 0 0 500px rgba(90,122,43,0.3)' }}
+                whileHover={{ y: -4, borderColor: 'rgba(90,122,43,0.6)', boxShadow: '0 0 30px rgba(90,122,43,0.3)' }}
                 transition={{ duration: 0.2 }}
-                className="bg-dark-2 border border-green/40 shadow-[0_0_80px_rgba(90,122,43,0.8),0_0_200px_rgba(90,122,43,0.5),0_0_350px_rgba(90,122,43,0.25)] p-6 text-center"
+                className="bg-dark-2 border border-green/40 shadow-[0_0_20px_rgba(90,122,43,0.15)] p-6 text-center"
               >
                 <img
                   src={src}

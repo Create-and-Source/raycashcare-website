@@ -76,7 +76,7 @@ export default function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="bg-dark-2 border border-green/40 shadow-[0_0_80px_rgba(90,122,43,0.8),0_0_200px_rgba(90,122,43,0.5),0_0_350px_rgba(90,122,43,0.25)] aspect-[3/4] overflow-hidden"
+            className="bg-dark-2 border border-green/40 shadow-[0_0_20px_rgba(90,122,43,0.15)] aspect-[3/4] overflow-hidden"
           >
             <ParallaxImage
               src="/images/portrait-black.webp"
@@ -175,13 +175,13 @@ export default function About() {
             </h2>
           </TextReveal>
         </div>
-        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {values.map(({ icon: Icon, title, desc }) => (
             <StaggerItem key={title}>
               <motion.div
-                whileHover={{ y: -6, borderColor: 'rgba(90,122,43,0.6)', boxShadow: '0 0 120px rgba(90,122,43,1), 0 0 300px rgba(90,122,43,0.6), 0 0 500px rgba(90,122,43,0.3)' }}
+                whileHover={{ y: -6, borderColor: 'rgba(90,122,43,0.5)', boxShadow: '0 0 30px rgba(90,122,43,0.3)' }}
                 transition={{ duration: 0.2 }}
-                className="bg-dark-2 border border-green/40 shadow-[0_0_80px_rgba(90,122,43,0.8),0_0_200px_rgba(90,122,43,0.5),0_0_350px_rgba(90,122,43,0.25)] p-8 text-center h-full"
+                className="bg-dark-2 border border-green/20 shadow-[0_0_20px_rgba(90,122,43,0.15)] p-8 text-center h-full"
               >
                 <motion.div
                   whileHover={{ rotate: 360 }}

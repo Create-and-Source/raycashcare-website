@@ -94,13 +94,13 @@ export default function Press() {
             Major appearances
           </h2>
         </div>
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {majorAppearances.map(({ icon: Icon, title, subtitle, desc, image }) => (
             <StaggerItem key={title}>
               <motion.div
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.2 }}
-                className="bg-dark-2 border border-green/40 shadow-[0_0_80px_rgba(90,122,43,0.8),0_0_200px_rgba(90,122,43,0.5),0_0_350px_rgba(90,122,43,0.25)] hover:border-green/20 overflow-hidden transition-colors"
+                className="bg-dark-2 border border-green/40 shadow-[0_0_20px_rgba(90,122,43,0.15)] hover:border-green/20 overflow-hidden transition-colors"
               >
                 {image && (
                   <div className="h-48 overflow-hidden">
@@ -139,8 +139,8 @@ export default function Press() {
           {allPress.map((name) => (
             <motion.div
               key={name}
-              whileHover={{ scale: 1.05, boxShadow: '0 0 120px rgba(90,122,43,1), 0 0 300px rgba(90,122,43,0.6), 0 0 500px rgba(90,122,43,0.3)' }}
-              className="bg-dark-2 border border-green/40 shadow-[0_0_80px_rgba(90,122,43,0.8),0_0_200px_rgba(90,122,43,0.5),0_0_350px_rgba(90,122,43,0.25)] px-6 py-4 cursor-default"
+              whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(90,122,43,0.3)' }}
+              className="bg-dark-2 border border-green/40 shadow-[0_0_20px_rgba(90,122,43,0.15)] px-6 py-4 cursor-default"
             >
               <span className="text-white text-sm font-bold uppercase tracking-wider">{name}</span>
             </motion.div>
@@ -193,7 +193,7 @@ export default function Press() {
             Podcasts &amp; features
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {podcasts.map(({ title, id }, i) => (
             <motion.div
               key={id}
@@ -201,7 +201,7 @@ export default function Press() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="bg-dark-2 border border-green/40 shadow-[0_0_80px_rgba(90,122,43,0.8),0_0_200px_rgba(90,122,43,0.5),0_0_350px_rgba(90,122,43,0.25)]"
+              className="bg-dark-2 border border-green/40 shadow-[0_0_20px_rgba(90,122,43,0.15)]"
             >
               <LazyYouTube id={id} title={title} />
               <div className="p-4">

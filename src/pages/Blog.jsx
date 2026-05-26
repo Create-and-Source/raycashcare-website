@@ -92,7 +92,7 @@ export default function Blog() {
 
       {/* Posts Grid */}
       <Section dark>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map(({ url, title, excerpt, category }, i) => (
             <motion.a
               key={url}
@@ -101,10 +101,10 @@ export default function Blog() {
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ y: -6, boxShadow: '0 0 120px rgba(90,122,43,1), 0 0 300px rgba(90,122,43,0.6), 0 0 500px rgba(90,122,43,0.3)' }}
+              whileHover={{ y: -6, boxShadow: '0 0 30px rgba(90,122,43,0.3)' }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="group relative bg-dark-2 border border-green/40 shadow-[0_0_80px_rgba(90,122,43,0.8),0_0_200px_rgba(90,122,43,0.5),0_0_350px_rgba(90,122,43,0.25)] no-underline transition-all overflow-hidden"
+              className="group relative bg-dark-2 border border-green/40 shadow-[0_0_20px_rgba(90,122,43,0.15)] no-underline transition-all overflow-hidden"
             >
               {/* Shimmer effect */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"

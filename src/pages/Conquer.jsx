@@ -72,7 +72,7 @@ export default function Conquer() {
             The four pillars
           </h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {pillars.map(({ icon: Icon, title, desc }, i) => (
             <motion.div
               key={title}
@@ -80,7 +80,7 @@ export default function Conquer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-dark-2 border border-green/40 p-8 text-center shadow-[0_0_80px_rgba(90,122,43,0.8),0_0_200px_rgba(90,122,43,0.5),0_0_350px_rgba(90,122,43,0.25)]"
+              className="bg-dark-2 border border-green/40 p-8 text-center shadow-[0_0_20px_rgba(90,122,43,0.15)]"
             >
               <div className="w-14 h-14 bg-green/10 flex items-center justify-center mx-auto mb-4">
                 <Icon size={28} className="text-green" />
