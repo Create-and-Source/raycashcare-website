@@ -17,18 +17,9 @@ const topics = [
   { icon: Mic, title: 'Organizational Transformation', desc: 'Taking teams from good to extraordinary. Culture change, accountability systems, and operational excellence.' },
 ]
 
-const clientLogos = [
-  { name: 'Chevrolet', src: '/images/logo-chevrolet.webp' },
-  { name: 'Comcast', src: '/images/logo-comcast.webp' },
-  { name: 'UCLA', src: '/images/logo-ucla.webp' },
-  { name: 'Fit Body Boot Camp', src: '/images/logo-fitbody.webp' },
-  { name: 'NFM Lending', src: '/images/logo-nfm.webp' },
-  { name: 'Sansone Group', src: '/images/logo-sansone.webp' },
-  { name: 'SEAL Future Foundation', src: '/images/logo-seal-future.webp' },
-  { name: 'Heart of a Lion Foundation', src: '/images/logo-heart-lion.webp' },
-]
-
-const clientNames = [
+const allClients = [
+  'Chevrolet', 'Comcast', 'UCLA', 'Fit Body Boot Camp',
+  'NFM Lending', 'Sansone Group', 'SEAL Future Foundation', 'Heart of a Lion Foundation',
   'Plexus', 'BNSF Railway', 'ConnectWise', 'TSA', 'DogWatch', 'Youth Villages',
 ]
 
@@ -145,26 +136,15 @@ export default function Speaking() {
           <TextReveal><p className="text-green font-bold text-xs tracking-[0.3em] uppercase mb-3">Trusted By</p></TextReveal>
           <TextReveal delay={0.1}><h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white">Organizations that book Ray</h2></TextReveal>
         </div>
-        {/* Logo grid */}
-        <StaggerContainer className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-8">
-          {clientLogos.map(({ name, src }) => (
-            <StaggerItem key={name}>
-              <motion.div
-                whileHover={{ scale: 1.05, borderColor: 'rgba(90,122,43,0.3)' }}
-                className="bg-white/90 rounded-lg border border-white/10 p-6 flex items-center justify-center h-24 cursor-default"
-              >
-                <img src={src} alt={name} className="max-h-12 max-w-full object-contain" />
-              </motion.div>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
-        {/* Text names */}
         <StaggerContainer className="flex flex-wrap items-center justify-center gap-4">
-          {clientNames.map((client) => (
+          {allClients.map((client) => (
             <StaggerItem key={client}>
-              <div className="bg-dark-2 border border-green/40 shadow-[0_0_20px_rgba(90,122,43,0.3)] px-6 py-3">
-                <span className="text-gray-3 text-sm font-bold uppercase tracking-wider">{client}</span>
-              </div>
+              <motion.div
+                whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(90,122,43,0.4)' }}
+                className="bg-dark-2 border border-green/40 shadow-[0_0_20px_rgba(90,122,43,0.3)] px-6 py-4 cursor-default"
+              >
+                <span className="text-white text-sm font-bold uppercase tracking-wider">{client}</span>
+              </motion.div>
             </StaggerItem>
           ))}
         </StaggerContainer>

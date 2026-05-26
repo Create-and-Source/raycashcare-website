@@ -101,19 +101,24 @@ export default function Blog() {
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -6, boxShadow: '0 0 35px rgba(90,122,43,0.5)' }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="group bg-dark-2 border border-green/40 shadow-[0_0_20px_rgba(90,122,43,0.3)] hover:border-green/30 no-underline transition-all"
+              className="group relative bg-dark-2 border border-green/40 shadow-[0_0_20px_rgba(90,122,43,0.3)] no-underline transition-all overflow-hidden"
             >
-              <div className="h-48 bg-dark-3 flex items-center justify-center">
-                <span className="text-gray-2 text-xs uppercase tracking-widest">{category}</span>
+              {/* Shimmer effect */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                style={{ background: 'linear-gradient(105deg, transparent 40%, rgba(90,122,43,0.15) 45%, rgba(90,122,43,0.3) 50%, rgba(90,122,43,0.15) 55%, transparent 60%)', backgroundSize: '200% 100%', animation: 'shimmer 1.5s infinite' }}
+              />
+              {/* Category banner */}
+              <div className="h-32 bg-gradient-to-br from-green/20 via-dark-3 to-dark-2 flex items-center justify-center border-b border-green/20">
+                <span className="text-green text-lg font-black uppercase tracking-[0.3em]">{category}</span>
               </div>
-              <div className="p-6">
-                <span className="text-green text-xs font-bold uppercase tracking-widest">{category}</span>
-                <h3 className="text-lg font-bold text-white mt-2 mb-3">{title}</h3>
-                <p className="text-gray-3 text-sm leading-relaxed mb-4">{excerpt}</p>
-                <span className="text-green text-sm font-bold uppercase tracking-widest group-hover:translate-x-1 inline-flex items-center gap-2 transition-transform">
-                  Read <ArrowRight size={14} />
+              <div className="p-8">
+                <h3 className="text-2xl font-black text-white mb-3 uppercase tracking-wide group-hover:text-green transition-colors">{title}</h3>
+                <p className="text-gray-3 text-base leading-relaxed mb-6">{excerpt}</p>
+                <span className="text-green text-sm font-bold uppercase tracking-widest group-hover:translate-x-2 inline-flex items-center gap-2 transition-transform duration-300">
+                  Read Article <ArrowRight size={16} />
                 </span>
               </div>
             </motion.a>

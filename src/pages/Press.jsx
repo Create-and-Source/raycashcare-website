@@ -52,16 +52,10 @@ const podcasts = [
   { title: 'NFM Salute Tribute', id: 'XQou7D2t14k' },
 ]
 
-const pressLogos = [
-  { name: 'History Channel', src: '/images/logo-history.webp' },
-  { name: 'BBC', src: '/images/logo-bbc.webp' },
-  { name: 'Discovery', src: '/images/logo-discovery.webp' },
-  { name: 'Muscle & Fitness', src: '/images/logo-muscle-fitness.webp' },
-  { name: 'We Are The Mighty', src: '/images/logo-we-are-the-mighty.webp' },
-  { name: 'NFM Lending', src: '/images/logo-nfm.webp' },
+const allPress = [
+  'History Channel', 'BBC', 'Discovery', 'Muscle & Fitness',
+  'We Are The Mighty', 'NFM Lending', 'Sony Pictures', 'U.S. Navy', 'SEALgrinderPT',
 ]
-
-const pressNames = ['Sony Pictures', 'U.S. Navy', 'SEALgrinderPT']
 
 export default function Press() {
   return (
@@ -141,22 +135,15 @@ export default function Press() {
             Featured in
           </h2>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 mb-6">
-          {pressLogos.map(({ name, src }) => (
+        <div className="flex flex-wrap items-center justify-center gap-4">
+          {allPress.map((name) => (
             <motion.div
               key={name}
-              whileHover={{ scale: 1.05, borderColor: 'rgba(90,122,43,0.3)' }}
-              className="bg-dark border border-green/40 shadow-[0_0_20px_rgba(90,122,43,0.3)] p-6 flex items-center justify-center h-20"
+              whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(90,122,43,0.4)' }}
+              className="bg-dark-2 border border-green/40 shadow-[0_0_20px_rgba(90,122,43,0.3)] px-6 py-4 cursor-default"
             >
-              <img src={src} alt={name} className="max-h-10 max-w-full object-contain brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
+              <span className="text-white text-sm font-bold uppercase tracking-wider">{name}</span>
             </motion.div>
-          ))}
-        </div>
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          {pressNames.map((name) => (
-            <div key={name} className="bg-dark border border-green/40 shadow-[0_0_20px_rgba(90,122,43,0.3)] px-6 py-4">
-              <span className="text-gray-3 text-sm font-bold uppercase tracking-wider">{name}</span>
-            </div>
           ))}
         </div>
       </Section>

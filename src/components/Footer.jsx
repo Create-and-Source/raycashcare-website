@@ -117,17 +117,6 @@ export default function Footer() {
           <p className="text-gray-2 text-xs">
             &copy; {new Date().getFullYear()} Ray "Cash" Care. All rights reserved.
           </p>
-          <p className="text-gray-2 text-xs">
-            Built by{' '}
-            <a
-              href="https://createandsource-website.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-3 hover:text-green no-underline transition-colors"
-            >
-              Create &amp; Source
-            </a>
-          </p>
         </div>
       </div>
     </footer>
