@@ -88,7 +88,7 @@ export default function Contact() {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-2 gap-4 md:gap-8">
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-widest text-gray-3 mb-2">
                       Full Name *
@@ -130,7 +130,7 @@ export default function Contact() {
                   />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-widest text-gray-3 mb-2">
                       Event Type *
