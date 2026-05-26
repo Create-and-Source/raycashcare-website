@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { ExternalLink, Film, Tv, Radio } from 'lucide-react'
 import Section from '../components/Section'
+import LazyYouTube from '../components/LazyYouTube'
 
 const majorAppearances = [
   {
@@ -131,16 +132,7 @@ export default function Press() {
               transition={{ delay: i * 0.08 }}
               className="bg-dark-2 border border-white/5"
             >
-              <div className="relative w-full aspect-video">
-                <iframe
-                  src={`https://www.youtube.com/embed/${id}?rel=0`}
-                  title={title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full"
-                  style={{ border: 'none' }}
-                />
-              </div>
+              <LazyYouTube id={id} title={title} />
               <div className="p-4">
                 <p className="text-white text-sm font-bold">{title}</p>
               </div>

@@ -1,7 +1,11 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
+import { AnimatePresence } from 'framer-motion'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
+import FilmGrain from './components/FilmGrain'
+import LoadingScreen from './components/LoadingScreen'
+import PageTransition from './components/PageTransition'
 import Home from './pages/Home'
 import About from './pages/About'
 import Speaking from './pages/Speaking'
@@ -11,6 +15,7 @@ import Blog from './pages/Blog'
 import Press from './pages/Press'
 import Shop from './pages/Shop'
 import Contact from './pages/Contact'
+import NotFound from './pages/NotFound'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -21,22 +26,29 @@ function ScrollToTop() {
 }
 
 export default function App() {
+  const location = useLocation()
+
   return (
     <>
+      <LoadingScreen />
+      <FilmGrain />
       <ScrollToTop />
       <Nav />
-      <main className="pt-0">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/speaking" element={<Speaking />} />
-          <Route path="/conquer" element={<Conquer />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/press" element={<Press />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+      <main>
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<PageTransition><Home /></PageTransition>} />
+            <Route path="/about" element={<PageTransition><About /></PageTransition>} />
+            <Route path="/speaking" element={<PageTransition><Speaking /></PageTransition>} />
+            <Route path="/conquer" element={<PageTransition><Conquer /></PageTransition>} />
+            <Route path="/events" element={<PageTransition><Events /></PageTransition>} />
+            <Route path="/blog" element={<PageTransition><Blog /></PageTransition>} />
+            <Route path="/press" element={<PageTransition><Press /></PageTransition>} />
+            <Route path="/shop" element={<PageTransition><Shop /></PageTransition>} />
+            <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+            <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
+          </Routes>
+        </AnimatePresence>
       </main>
       <Footer />
     </>

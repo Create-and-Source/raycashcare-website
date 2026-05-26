@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { ArrowRight, Check } from 'lucide-react'
 
 const socials = [
   { label: 'Instagram', href: 'https://www.instagram.com/raycashcare/' },
@@ -9,8 +11,54 @@ const socials = [
 ]
 
 export default function Footer() {
+  const [email, setEmail] = useState('')
+  const [subscribed, setSubscribed] = useState(false)
+
+  const handleSubscribe = (e) => {
+    e.preventDefault()
+    if (email) setSubscribed(true)
+  }
+
   return (
     <footer className="bg-dark border-t border-white/5">
+      {/* Email Capture */}
+      <div className="border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-6 py-12">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <h3 className="text-xl font-bold uppercase tracking-tight text-white">
+                Get after it
+              </h3>
+              <p className="text-gray-3 text-sm mt-1">
+                Weekly discipline, mindset, and leadership insights from Ray.
+              </p>
+            </div>
+            {subscribed ? (
+              <div className="flex items-center gap-2 text-green font-bold text-sm uppercase tracking-widest">
+                <Check size={18} /> You're in. Stay hard.
+              </div>
+            ) : (
+              <form onSubmit={handleSubscribe} className="flex w-full md:w-auto">
+                <input
+                  type="email"
+                  required
+                  placeholder="Your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="bg-dark-2 border border-white/10 border-r-0 text-white px-4 py-3 text-sm focus:border-green focus:outline-none transition-colors w-full md:w-64 placeholder:text-gray-2"
+                />
+                <button
+                  type="submit"
+                  className="bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-6 py-3 border border-green cursor-pointer transition-all flex items-center gap-2 shrink-0"
+                >
+                  Join <ArrowRight size={14} />
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}

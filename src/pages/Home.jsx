@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowRight, Shield, Mic, Users, Dumbbell } from 'lucide-react'
+import { ArrowRight, Mic, Users, Dumbbell } from 'lucide-react'
 import Section from '../components/Section'
+import Counter from '../components/Counter'
+import LazyYouTube from '../components/LazyYouTube'
 
 const credentials = [
   'Navy SEAL Veteran',
@@ -51,8 +53,6 @@ const testimonials = [
   },
 ]
 
-const videoId = '7FqDLgh1HkA'
-
 export default function Home() {
   return (
     <>
@@ -71,7 +71,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 1.5 }}
           >
             <p className="text-green font-bold text-sm tracking-[0.3em] uppercase mb-6">
               Navy SEAL Veteran &bull; Speaker &bull; Coach
@@ -126,8 +126,18 @@ export default function Home() {
         </div>
       </div>
 
-      {/* What I Do */}
+      {/* Stats Counter */}
       <Section>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+          <Counter end={12} suffix="+" label="Years Navy" />
+          <Counter end={10} label="Years SEAL Teams" />
+          <Counter end={202} suffix="K" label="Instagram Followers" />
+          <Counter end={120} suffix="K" label="TikTok Followers" />
+        </div>
+      </Section>
+
+      {/* What I Do */}
+      <Section dark>
         <div className="text-center mb-16">
           <p className="text-green font-bold text-xs tracking-[0.3em] uppercase mb-3">What I Do</p>
           <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white">
@@ -139,7 +149,7 @@ export default function Home() {
             <Link
               key={title}
               to={link}
-              className="group bg-dark border border-white/5 hover:border-green/30 p-8 no-underline transition-all"
+              className="group bg-dark-2 border border-white/5 hover:border-green/30 p-8 no-underline transition-all"
             >
               <div className="w-12 h-12 bg-green/10 flex items-center justify-center mb-6">
                 <Icon size={24} className="text-green" />
@@ -155,29 +165,20 @@ export default function Home() {
       </Section>
 
       {/* Featured Video */}
-      <Section dark>
+      <Section>
         <div className="text-center mb-12">
           <p className="text-green font-bold text-xs tracking-[0.3em] uppercase mb-3">Watch</p>
           <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white">
             See Ray in action
           </h2>
         </div>
-        <div className="max-w-4xl mx-auto">
-          <div className="relative w-full aspect-video bg-dark-2 border border-white/5">
-            <iframe
-              src={`https://www.youtube.com/embed/${videoId}?rel=0`}
-              title="Ray Cash Care Speaking"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="absolute inset-0 w-full h-full"
-              style={{ border: 'none' }}
-            />
-          </div>
+        <div className="max-w-4xl mx-auto border border-white/5">
+          <LazyYouTube id="7FqDLgh1HkA" title="Ray Cash Care — Navy SEAL Reveals #1 Rule To Stay Alive" />
         </div>
       </Section>
 
       {/* Testimonials */}
-      <Section>
+      <Section dark>
         <div className="text-center mb-16">
           <p className="text-green font-bold text-xs tracking-[0.3em] uppercase mb-3">Impact</p>
           <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white">
@@ -192,7 +193,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
-              className="bg-dark border border-white/5 p-8"
+              className="bg-dark-2 border border-white/5 p-8"
             >
               <div className="text-green text-4xl font-black mb-4">"</div>
               <p className="text-gray-3 text-sm leading-relaxed mb-6">{quote}</p>
@@ -206,7 +207,7 @@ export default function Home() {
       </Section>
 
       {/* Book Cover / Warrior Rising */}
-      <Section dark>
+      <Section>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-green font-bold text-xs tracking-[0.3em] uppercase mb-3">The Book</p>
