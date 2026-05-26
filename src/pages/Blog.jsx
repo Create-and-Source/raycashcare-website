@@ -104,7 +104,7 @@ export default function Blog() {
               whileHover={{ y: -6, boxShadow: '0 0 5px rgba(90,122,43,0.2)' }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="group relative bg-dark-2 border border-green/40 shadow-[0_0_3px_rgba(90,122,43,0.15)] no-underline transition-all overflow-hidden"
+              className="group relative bg-dark-2 border border-green/15 shadow-[0_0_3px_rgba(90,122,43,0.15)] no-underline transition-all overflow-hidden"
             >
               {/* Shimmer effect */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"

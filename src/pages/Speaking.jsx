@@ -118,7 +118,7 @@ export default function Speaking() {
               <motion.div
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.2 }}
-                className="bg-dark border border-green/40 shadow-[0_0_3px_rgba(90,122,43,0.15)] hover:border-green/20 transition-colors"
+                className="bg-dark border border-green/15 shadow-[0_0_3px_rgba(90,122,43,0.15)] hover:border-green/20 transition-colors"
               >
                 <LazyYouTube id={id} title={title} />
                 <div className="p-4">
@@ -141,7 +141,7 @@ export default function Speaking() {
             <StaggerItem key={client}>
               <motion.div
                 whileHover={{ scale: 1.05, boxShadow: '0 0 5px rgba(90,122,43,0.2)' }}
-                className="bg-dark-2 border border-green/40 shadow-[0_0_3px_rgba(90,122,43,0.15)] px-6 py-4 cursor-default"
+                className="bg-dark-2 border border-green/15 shadow-[0_0_3px_rgba(90,122,43,0.15)] px-6 py-4 cursor-default"
               >
                 <span className="text-white text-sm font-bold uppercase tracking-wider">{client}</span>
               </motion.div>

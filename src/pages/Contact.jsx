@@ -75,7 +75,7 @@ export default function Contact() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="bg-dark-2 border border-green/30 p-12 text-center"
+                className="bg-dark-2 border border-green/15 p-12 text-center"
               >
                 <div className="w-16 h-16 bg-green/10 flex items-center justify-center mx-auto mb-6">
                   <Send size={28} className="text-green" />
@@ -202,7 +202,7 @@ export default function Contact() {
 
           {/* Sidebar */}
           <div className="space-y-8">
-            <div className="bg-dark-2 border border-green/40 shadow-[0_0_3px_rgba(90,122,43,0.15)] p-8">
+            <div className="bg-dark-2 border border-green/15 shadow-[0_0_3px_rgba(90,122,43,0.15)] p-8">
               <h3 className="text-lg font-bold text-white mb-4 uppercase">Get in Touch</h3>
               <div className="space-y-4">
                 <a
@@ -230,7 +230,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-dark-2 border border-green/40 shadow-[0_0_3px_rgba(90,122,43,0.15)] p-8">
+            <div className="bg-dark-2 border border-green/15 shadow-[0_0_3px_rgba(90,122,43,0.15)] p-8">
               <h3 className="text-lg font-bold text-white mb-4 uppercase">Speaker Bureaus</h3>
               <div className="space-y-3">
                 {[

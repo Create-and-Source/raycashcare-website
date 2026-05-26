@@ -76,7 +76,7 @@ export default function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="bg-dark-2 border border-green/40 shadow-[0_0_3px_rgba(90,122,43,0.15)] aspect-[3/4] overflow-hidden"
+            className="bg-dark-2 border border-green/15 shadow-[0_0_3px_rgba(90,122,43,0.15)] aspect-[3/4] overflow-hidden"
           >
             <ParallaxImage
               src="/images/portrait-black.webp"

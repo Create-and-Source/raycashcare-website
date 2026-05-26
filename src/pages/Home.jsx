@@ -99,9 +99,9 @@ export default function Home() {
         {/* Bottom fade */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent z-[2]" />
 
-        {/* Portrait — anchored bottom right, large */}
+        {/* Portrait — anchored bottom center on mobile, bottom right on desktop */}
         <motion.div
-          className="absolute bottom-0 right-0 lg:right-[5%] xl:right-[8%] z-[3] hidden md:block"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-0 lg:right-[5%] xl:right-[8%] z-[3]"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 1.8, ease: [0.16, 1, 0.3, 1] }}
@@ -109,7 +109,7 @@ export default function Home() {
           <motion.img
             src="/images/hero-portrait.webp"
             alt="Ray Cash Care"
-            className="h-[85vh] max-h-[900px] w-auto object-contain object-bottom"
+            className="h-[70vh] md:h-[85vh] max-h-[900px] w-auto object-contain object-bottom"
             style={{ scale: heroScale }}
           />
         </motion.div>
@@ -304,7 +304,7 @@ export default function Home() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto border border-green/40 shadow-[0_0_3px_rgba(90,122,43,0.15)] hover:border-green/20 transition-colors"
+          className="max-w-4xl mx-auto border border-green/15 shadow-[0_0_3px_rgba(90,122,43,0.15)] hover:border-green/20 transition-colors"
         >
           <LazyYouTube id="7FqDLgh1HkA" title="Ray Cash Care — Navy SEAL Reveals #1 Rule To Stay Alive" />
         </motion.div>
@@ -328,7 +328,7 @@ export default function Home() {
               <motion.div
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.2 }}
-                className="bg-dark-2 border border-green/40 shadow-[0_0_3px_rgba(90,122,43,0.15)] hover:border-green/20 p-8 transition-colors h-full"
+                className="bg-dark-2 border border-green/15 shadow-[0_0_3px_rgba(90,122,43,0.15)] hover:border-green/20 p-8 transition-colors h-full"
               >
                 <motion.div
                   initial={{ scale: 0 }}
@@ -369,7 +369,7 @@ export default function Home() {
               <motion.div
                 whileHover={{ y: -4, borderColor: 'rgba(90,122,43,0.6)', boxShadow: '0 0 5px rgba(90,122,43,0.2)' }}
                 transition={{ duration: 0.2 }}
-                className="bg-dark-2 border border-green/40 shadow-[0_0_3px_rgba(90,122,43,0.15)] p-6 text-center"
+                className="bg-dark-2 border border-green/15 shadow-[0_0_3px_rgba(90,122,43,0.15)] p-6 text-center"
               >
                 <img
                   src={src}
