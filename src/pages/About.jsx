@@ -29,11 +29,11 @@ export default function About() {
       <section className="relative pt-32 pb-20 px-6 bg-black overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/images/hero-mountains.webp)', filter: 'brightness(0.5)' }}
+          style={{ backgroundImage: 'url(/images/hero-mountains.webp)', filter: 'brightness(0.7)' }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
         <div className="absolute bottom-0 right-0 hidden lg:block">
-          <img src="/images/portrait-blue-blazer.webp" alt="Ray Cash Care" className="h-[500px] object-contain opacity-20" />
+          <img src="/images/portrait-blue-blazer.webp" alt="Ray Cash Care" className="h-[500px] object-contain opacity-40" />
         </div>
         <div className="relative max-w-7xl mx-auto">
           <div className="max-w-3xl">
@@ -79,7 +79,7 @@ export default function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="bg-dark-2 border border-white/5 aspect-[3/4] overflow-hidden"
+            className="bg-dark-2 border border-green/20 shadow-lg shadow-green/10 aspect-[3/4] overflow-hidden"
           >
             <ParallaxImage
               src="/images/portrait-black.webp"
@@ -184,7 +184,7 @@ export default function About() {
               <motion.div
                 whileHover={{ y: -6, borderColor: 'rgba(90,122,43,0.3)' }}
                 transition={{ duration: 0.2 }}
-                className="bg-dark-2 border border-white/5 p-8 text-center h-full"
+                className="bg-dark-2 border border-green/20 shadow-lg shadow-green/10 p-8 text-center h-full"
               >
                 <motion.div
                   whileHover={{ rotate: 360 }}

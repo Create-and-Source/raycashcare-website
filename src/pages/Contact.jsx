@@ -99,7 +99,7 @@ export default function Contact() {
                       required
                       value={form.name}
                       onChange={handleChange}
-                      className="w-full bg-dark-2 border border-white/10 text-white px-4 py-3 text-sm focus:border-green focus:outline-none transition-colors"
+                      className="w-full bg-dark-2 border border-green/20 text-white px-4 py-3 text-sm focus:border-green focus:outline-none transition-colors"
                     />
                   </div>
                   <div>
@@ -112,7 +112,7 @@ export default function Contact() {
                       required
                       value={form.email}
                       onChange={handleChange}
-                      className="w-full bg-dark-2 border border-white/10 text-white px-4 py-3 text-sm focus:border-green focus:outline-none transition-colors"
+                      className="w-full bg-dark-2 border border-green/20 text-white px-4 py-3 text-sm focus:border-green focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
@@ -126,7 +126,7 @@ export default function Contact() {
                     name="organization"
                     value={form.organization}
                     onChange={handleChange}
-                    className="w-full bg-dark-2 border border-white/10 text-white px-4 py-3 text-sm focus:border-green focus:outline-none transition-colors"
+                    className="w-full bg-dark-2 border border-green/20 text-white px-4 py-3 text-sm focus:border-green focus:outline-none transition-colors"
                   />
                 </div>
 
@@ -140,7 +140,7 @@ export default function Contact() {
                       required
                       value={form.eventType}
                       onChange={handleChange}
-                      className="w-full bg-dark-2 border border-white/10 text-white px-4 py-3 text-sm focus:border-green focus:outline-none transition-colors appearance-none"
+                      className="w-full bg-dark-2 border border-green/20 text-white px-4 py-3 text-sm focus:border-green focus:outline-none transition-colors appearance-none"
                     >
                       <option value="">Select...</option>
                       {eventTypes.map((type) => (
@@ -157,7 +157,7 @@ export default function Contact() {
                       name="date"
                       value={form.date}
                       onChange={handleChange}
-                      className="w-full bg-dark-2 border border-white/10 text-white px-4 py-3 text-sm focus:border-green focus:outline-none transition-colors"
+                      className="w-full bg-dark-2 border border-green/20 text-white px-4 py-3 text-sm focus:border-green focus:outline-none transition-colors"
                     />
                   </div>
                   <div>
@@ -170,7 +170,7 @@ export default function Contact() {
                       placeholder="e.g. 500"
                       value={form.audienceSize}
                       onChange={handleChange}
-                      className="w-full bg-dark-2 border border-white/10 text-white px-4 py-3 text-sm focus:border-green focus:outline-none transition-colors placeholder:text-gray-2"
+                      className="w-full bg-dark-2 border border-green/20 text-white px-4 py-3 text-sm focus:border-green focus:outline-none transition-colors placeholder:text-gray-2"
                     />
                   </div>
                 </div>
@@ -186,7 +186,7 @@ export default function Contact() {
                     value={form.message}
                     onChange={handleChange}
                     placeholder="What are you looking for? What does your audience need to hear?"
-                    className="w-full bg-dark-2 border border-white/10 text-white px-4 py-3 text-sm focus:border-green focus:outline-none transition-colors resize-none placeholder:text-gray-2"
+                    className="w-full bg-dark-2 border border-green/20 text-white px-4 py-3 text-sm focus:border-green focus:outline-none transition-colors resize-none placeholder:text-gray-2"
                   />
                 </div>
 
@@ -202,7 +202,7 @@ export default function Contact() {
 
           {/* Sidebar */}
           <div className="space-y-8">
-            <div className="bg-dark-2 border border-white/5 p-8">
+            <div className="bg-dark-2 border border-green/20 shadow-lg shadow-green/10 p-8">
               <h3 className="text-lg font-bold text-white mb-4 uppercase">Get in Touch</h3>
               <div className="space-y-4">
                 <a
@@ -230,7 +230,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-dark-2 border border-white/5 p-8">
+            <div className="bg-dark-2 border border-green/20 shadow-lg shadow-green/10 p-8">
               <h3 className="text-lg font-bold text-white mb-4 uppercase">Speaker Bureaus</h3>
               <div className="space-y-3">
                 {[

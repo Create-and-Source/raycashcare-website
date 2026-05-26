@@ -45,12 +45,12 @@ export default function Speaking() {
       <section className="relative pt-32 pb-20 px-6 bg-black overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/images/hero-mountains.webp)', filter: 'brightness(0.4)' }}
+          style={{ backgroundImage: 'url(/images/hero-mountains.webp)', filter: 'brightness(0.7)' }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40" />
-        <div className="absolute right-0 top-0 bottom-0 w-1/3 hidden lg:block">
-          <img src="/images/portrait-blazer.webp" alt="Ray Cash Care" className="h-full w-full object-cover object-top opacity-25" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
+        <div className="absolute right-0 top-0 bottom-0 w-2/5 hidden lg:block">
+          <img src="/images/portrait-blazer.webp" alt="Ray Cash Care" className="h-full w-full object-cover object-top opacity-50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-transparent" />
         </div>
         <div className="relative max-w-7xl mx-auto">
           <motion.div
@@ -98,7 +98,7 @@ export default function Speaking() {
               <motion.div
                 whileHover={{ y: -4, borderColor: 'rgba(90,122,43,0.3)' }}
                 transition={{ duration: 0.2 }}
-                className="bg-dark-2 border border-white/5 p-8 h-full"
+                className="bg-dark-2 border border-green/20 p-8 h-full shadow-lg shadow-green/10"
               >
                 <motion.div
                   whileHover={{ rotate: [0, -10, 10, 0] }}
@@ -127,7 +127,7 @@ export default function Speaking() {
               <motion.div
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.2 }}
-                className="bg-dark border border-white/5 hover:border-green/20 transition-colors"
+                className="bg-dark border border-green/20 shadow-lg shadow-green/10 hover:border-green/20 transition-colors"
               >
                 <LazyYouTube id={id} title={title} />
                 <div className="p-4">
@@ -151,9 +151,9 @@ export default function Speaking() {
             <StaggerItem key={name}>
               <motion.div
                 whileHover={{ scale: 1.05, borderColor: 'rgba(90,122,43,0.3)' }}
-                className="bg-dark-2 border border-white/5 p-6 flex items-center justify-center h-24 cursor-default"
+                className="bg-white/90 rounded-lg border border-white/10 p-6 flex items-center justify-center h-24 cursor-default"
               >
-                <img src={src} alt={name} className="max-h-12 max-w-full object-contain brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
+                <img src={src} alt={name} className="max-h-12 max-w-full object-contain" />
               </motion.div>
             </StaggerItem>
           ))}
@@ -162,7 +162,7 @@ export default function Speaking() {
         <StaggerContainer className="flex flex-wrap items-center justify-center gap-4">
           {clientNames.map((client) => (
             <StaggerItem key={client}>
-              <div className="bg-dark-2 border border-white/5 px-6 py-3">
+              <div className="bg-dark-2 border border-green/20 shadow-lg shadow-green/10 px-6 py-3">
                 <span className="text-gray-3 text-sm font-bold uppercase tracking-wider">{client}</span>
               </div>
             </StaggerItem>

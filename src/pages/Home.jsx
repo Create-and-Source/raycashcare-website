@@ -267,7 +267,7 @@ export default function Home() {
             <StaggerItem key={title}>
               <Link
                 to={link}
-                className="group block bg-dark-2 border border-white/5 hover:border-green/30 p-8 no-underline transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-black/20"
+                className="group block bg-dark-2 border border-green/20 p-8 no-underline transition-all hover:-translate-y-1 shadow-lg shadow-green/10 hover:shadow-xl hover:shadow-green/20"
               >
                 <motion.div
                   whileHover={{ rotate: [0, -10, 10, 0] }}
@@ -304,7 +304,7 @@ export default function Home() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto border border-white/5 hover:border-green/20 transition-colors"
+          className="max-w-4xl mx-auto border border-green/20 shadow-lg shadow-green/10 hover:border-green/20 transition-colors"
         >
           <LazyYouTube id="7FqDLgh1HkA" title="Ray Cash Care — Navy SEAL Reveals #1 Rule To Stay Alive" />
         </motion.div>
@@ -328,7 +328,7 @@ export default function Home() {
               <motion.div
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.2 }}
-                className="bg-dark-2 border border-white/5 hover:border-green/20 p-8 transition-colors h-full"
+                className="bg-dark-2 border border-green/20 shadow-lg shadow-green/10 hover:border-green/20 p-8 transition-colors h-full"
               >
                 <motion.div
                   initial={{ scale: 0 }}
@@ -369,7 +369,7 @@ export default function Home() {
               <motion.div
                 whileHover={{ y: -4, borderColor: 'rgba(90,122,43,0.3)' }}
                 transition={{ duration: 0.2 }}
-                className="bg-dark-2 border border-white/5 p-6 text-center"
+                className="bg-dark-2 border border-green/20 shadow-lg shadow-green/10 p-6 text-center"
               >
                 <img
                   src={src}

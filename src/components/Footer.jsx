@@ -20,9 +20,9 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-dark border-t border-white/5">
+    <footer className="bg-dark border-t border-green/20">
       {/* Email Capture */}
-      <div className="border-b border-white/5">
+      <div className="border-b border-green/20">
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
@@ -113,7 +113,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="mt-16 pt-8 border-t border-green/20 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-2 text-xs">
             &copy; {new Date().getFullYear()} Ray "Cash" Care. All rights reserved.
           </p>

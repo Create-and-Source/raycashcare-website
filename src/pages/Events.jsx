@@ -39,7 +39,7 @@ export default function Events() {
       <section className="relative pt-32 pb-20 px-6 bg-black overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/images/q-course-wide.webp)', filter: 'brightness(0.15) contrast(1.2)' }}
+          style={{ backgroundImage: 'url(/images/q-course-wide.webp)', filter: 'brightness(0.35) contrast(1.2)' }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/60" />
         <div className="relative max-w-7xl mx-auto">
@@ -77,7 +77,7 @@ export default function Events() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-dark-2 border border-white/5 p-8"
+              className="bg-dark-2 border border-green/20 shadow-lg shadow-green/10 p-8"
             >
               <span className="text-green text-xs font-bold uppercase tracking-widest">{type}</span>
               <h3 className="text-xl font-bold text-white mt-2 mb-4">{title}</h3>
@@ -111,7 +111,7 @@ export default function Events() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="bg-dark border border-white/5 p-6"
+              className="bg-dark border border-green/20 shadow-lg shadow-green/10 p-6"
             >
               <h3 className="text-white font-bold mb-2">{title}</h3>
               <p className="text-gray-3 text-sm leading-relaxed">{desc}</p>

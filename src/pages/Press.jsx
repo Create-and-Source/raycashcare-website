@@ -106,7 +106,7 @@ export default function Press() {
               <motion.div
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.2 }}
-                className="bg-dark-2 border border-white/5 hover:border-green/20 overflow-hidden transition-colors"
+                className="bg-dark-2 border border-green/20 shadow-lg shadow-green/10 hover:border-green/20 overflow-hidden transition-colors"
               >
                 {image && (
                   <div className="h-48 overflow-hidden">
@@ -146,7 +146,7 @@ export default function Press() {
             <motion.div
               key={name}
               whileHover={{ scale: 1.05, borderColor: 'rgba(90,122,43,0.3)' }}
-              className="bg-dark border border-white/5 p-6 flex items-center justify-center h-20"
+              className="bg-dark border border-green/20 shadow-lg shadow-green/10 p-6 flex items-center justify-center h-20"
             >
               <img src={src} alt={name} className="max-h-10 max-w-full object-contain brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
             </motion.div>
@@ -154,7 +154,7 @@ export default function Press() {
         </div>
         <div className="flex flex-wrap items-center justify-center gap-4">
           {pressNames.map((name) => (
-            <div key={name} className="bg-dark border border-white/5 px-6 py-4">
+            <div key={name} className="bg-dark border border-green/20 shadow-lg shadow-green/10 px-6 py-4">
               <span className="text-gray-3 text-sm font-bold uppercase tracking-wider">{name}</span>
             </div>
           ))}
@@ -214,7 +214,7 @@ export default function Press() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="bg-dark-2 border border-white/5"
+              className="bg-dark-2 border border-green/20 shadow-lg shadow-green/10"
             >
               <LazyYouTube id={id} title={title} />
               <div className="p-4">
