@@ -112,7 +112,7 @@ export default function Conquer() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <img src="/images/community-app.webp" alt="CONQUER Community App" className="w-full rounded-lg shadow-2xl shadow-black/50" />
+            <img src="/images/conquer-app.webp" alt="CONQUER Community App" className="w-full rounded-lg shadow-2xl shadow-black/50" />
             <motion.img
               src="/images/inner-circle.png"
               alt="Inner Circle Program"
