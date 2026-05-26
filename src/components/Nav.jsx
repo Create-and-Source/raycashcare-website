@@ -33,8 +33,8 @@ export default function Nav() {
       transition={{ duration: 0.6, delay: 1.4, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-black/95 backdrop-blur-xl border-b border-green/20 shadow-lg shadow-black/20'
-          : 'bg-black/80 backdrop-blur-md border-b border-green/20'
+          ? 'bg-black/95 backdrop-blur-xl border-b border-green/40 shadow-[0_0_30px_rgba(90,122,43,0.4)]'
+          : 'bg-black/80 backdrop-blur-md border-b border-green/30 shadow-[0_0_20px_rgba(90,122,43,0.2)]'
       }`}
     >
       <div className={`max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-500 ${

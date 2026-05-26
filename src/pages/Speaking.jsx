@@ -66,7 +66,7 @@ export default function Speaking() {
               <MagneticButton>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-lg hover:shadow-green/20"
+                  className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-[0_0_40px_rgba(90,122,43,0.5),0_0_80px_rgba(90,122,43,0.25)]"
                 >
                   Inquire About Booking <ArrowRight size={16} />
                 </Link>
@@ -87,9 +87,9 @@ export default function Speaking() {
           {topics.map(({ icon: Icon, title, desc }) => (
             <StaggerItem key={title}>
               <motion.div
-                whileHover={{ y: -4, borderColor: 'rgba(90,122,43,0.3)' }}
+                whileHover={{ y: -4, borderColor: 'rgba(90,122,43,0.6)', boxShadow: '0 0 80px rgba(90,122,43,0.7), 0 0 150px rgba(90,122,43,0.35)' }}
                 transition={{ duration: 0.2 }}
-                className="bg-dark-2 border border-green/20 p-8 h-full shadow-lg shadow-green/10"
+                className="bg-dark-2 border border-green/20 p-8 h-full shadow-[0_0_50px_rgba(90,122,43,0.5),0_0_100px_rgba(90,122,43,0.25)]"
               >
                 <motion.div
                   whileHover={{ rotate: [0, -10, 10, 0] }}
@@ -118,7 +118,7 @@ export default function Speaking() {
               <motion.div
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.2 }}
-                className="bg-dark border border-green/40 shadow-[0_0_20px_rgba(90,122,43,0.3)] hover:border-green/20 transition-colors"
+                className="bg-dark border border-green/40 shadow-[0_0_60px_rgba(90,122,43,0.6),0_0_120px_rgba(90,122,43,0.3)] hover:border-green/20 transition-colors"
               >
                 <LazyYouTube id={id} title={title} />
                 <div className="p-4">
@@ -140,8 +140,8 @@ export default function Speaking() {
           {allClients.map((client) => (
             <StaggerItem key={client}>
               <motion.div
-                whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(90,122,43,0.4)' }}
-                className="bg-dark-2 border border-green/40 shadow-[0_0_20px_rgba(90,122,43,0.3)] px-6 py-4 cursor-default"
+                whileHover={{ scale: 1.05, boxShadow: '0 0 80px rgba(90,122,43,0.7), 0 0 150px rgba(90,122,43,0.35)' }}
+                className="bg-dark-2 border border-green/40 shadow-[0_0_60px_rgba(90,122,43,0.6),0_0_120px_rgba(90,122,43,0.3)] px-6 py-4 cursor-default"
               >
                 <span className="text-white text-sm font-bold uppercase tracking-wider">{client}</span>
               </motion.div>
@@ -172,7 +172,7 @@ export default function Speaking() {
             <MagneticButton>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-lg hover:shadow-green/20"
+                className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-[0_0_40px_rgba(90,122,43,0.5),0_0_80px_rgba(90,122,43,0.25)]"
               >
                 Book Ray Now <ArrowRight size={16} />
               </Link>
