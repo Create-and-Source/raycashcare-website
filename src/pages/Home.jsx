@@ -267,7 +267,7 @@ export default function Home() {
             <StaggerItem key={title}>
               <Link
                 to={link}
-                className="group block bg-dark-2 border border-green/20 p-8 no-underline transition-all hover:-translate-y-1 shadow-[0_0_3px_rgba(90,122,43,0.15)] hover:shadow-[0_0_5px_rgba(90,122,43,0.2)]"
+                className="group block bg-dark-2 border border-green/20 p-8 no-underline transition-all hover:-translate-y-1 shadow-[0_0_10px_rgba(90,122,43,0.12)] hover:shadow-[0_0_5px_rgba(90,122,43,0.2)]"
               >
                 <motion.div
                   whileHover={{ rotate: [0, -10, 10, 0] }}
@@ -304,7 +304,7 @@ export default function Home() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto border border-green/15 shadow-[0_0_3px_rgba(90,122,43,0.15)] hover:border-green/20 transition-colors"
+          className="max-w-4xl mx-auto border border-green/15 shadow-[0_0_10px_rgba(90,122,43,0.12)] hover:border-green/20 transition-colors"
         >
           <LazyYouTube id="7FqDLgh1HkA" title="Ray Cash Care — Navy SEAL Reveals #1 Rule To Stay Alive" />
         </motion.div>
@@ -328,7 +328,7 @@ export default function Home() {
               <motion.div
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.2 }}
-                className="bg-dark-2 border border-green/15 shadow-[0_0_3px_rgba(90,122,43,0.15)] hover:border-green/20 p-8 transition-colors h-full"
+                className="bg-dark-2 border border-green/15 shadow-[0_0_10px_rgba(90,122,43,0.12)] hover:border-green/20 p-8 transition-colors h-full"
               >
                 <motion.div
                   initial={{ scale: 0 }}
@@ -367,9 +367,9 @@ export default function Home() {
           {associates.map(({ name, title, src }) => (
             <StaggerItem key={name}>
               <motion.div
-                whileHover={{ y: -4, borderColor: 'rgba(90,122,43,0.6)', boxShadow: '0 0 5px rgba(90,122,43,0.2)' }}
+                whileHover={{ y: -4, borderColor: 'rgba(90,122,43,0.6)', boxShadow: '0 0 15px rgba(90,122,43,0.18)' }}
                 transition={{ duration: 0.2 }}
-                className="bg-dark-2 border border-green/15 shadow-[0_0_3px_rgba(90,122,43,0.15)] p-6 text-center"
+                className="bg-dark-2 border border-green/15 shadow-[0_0_10px_rgba(90,122,43,0.12)] p-6 text-center"
               >
                 <img
                   src={src}

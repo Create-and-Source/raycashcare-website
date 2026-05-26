@@ -80,7 +80,7 @@ export default function Conquer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-dark-2 border border-green/15 p-8 text-center shadow-[0_0_3px_rgba(90,122,43,0.15)]"
+              className="bg-dark-2 border border-green/15 p-8 text-center shadow-[0_0_10px_rgba(90,122,43,0.12)]"
             >
               <div className="w-14 h-14 bg-green/10 flex items-center justify-center mx-auto mb-4">
                 <Icon size={28} className="text-green" />
