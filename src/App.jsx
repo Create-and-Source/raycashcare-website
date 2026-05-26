@@ -13,6 +13,7 @@ import Conquer from './pages/Conquer'
 import Events from './pages/Events'
 import Blog from './pages/Blog'
 import Press from './pages/Press'
+import Reel from './pages/Reel'
 import Shop from './pages/Shop'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
@@ -43,6 +44,7 @@ export default function App() {
             <Route path="/conquer" element={<PageTransition><Conquer /></PageTransition>} />
             <Route path="/events" element={<PageTransition><Events /></PageTransition>} />
             <Route path="/blog" element={<PageTransition><Blog /></PageTransition>} />
+            <Route path="/reel" element={<PageTransition><Reel /></PageTransition>} />
             <Route path="/press" element={<PageTransition><Press /></PageTransition>} />
             <Route path="/shop" element={<PageTransition><Shop /></PageTransition>} />
             <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />

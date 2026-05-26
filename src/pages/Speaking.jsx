@@ -17,11 +17,19 @@ const topics = [
   { icon: Mic, title: 'Organizational Transformation', desc: 'Taking teams from good to extraordinary. Culture change, accountability systems, and operational excellence.' },
 ]
 
-const allClients = [
-  'Chevrolet', 'Comcast', 'UCLA', 'Fit Body Boot Camp',
-  'NFM Lending', 'Sansone Group', 'SEAL Future Foundation', 'Heart of a Lion Foundation',
-  'Plexus', 'BNSF Railway', 'ConnectWise', 'TSA', 'DogWatch', 'Youth Villages',
+const clientLogos = [
+  { name: 'Chevrolet', src: '/images/logo-chevrolet.webp' },
+  { name: 'Comcast', src: '/images/logo-comcast.webp' },
+  { name: 'UCLA', src: '/images/logo-ucla.webp' },
+  { name: 'Fit Body Boot Camp', src: '/images/logo-fitbody.webp' },
+  { name: 'NFM Lending', src: '/images/logo-nfm.webp' },
+  { name: 'Sansone Group', src: '/images/logo-sansone.webp' },
+  { name: 'SEAL Future Foundation', src: '/images/logo-seal-future.webp' },
+  { name: 'Heart of a Lion', src: '/images/logo-heart-lion.webp' },
+  { name: 'Build-A-Bike', src: '/images/logo-build-a-bike.webp' },
 ]
+
+const textClients = ['Plexus', 'BNSF Railway', 'ConnectWise', 'TSA', 'DogWatch', 'Youth Villages']
 
 const videos = [
   { id: '75JPtmco4IU', title: 'Speaking Engagements Promo' },
@@ -137,18 +145,23 @@ export default function Speaking() {
           <TextReveal><p className="text-green font-bold text-xs tracking-[0.3em] uppercase mb-3">Trusted By</p></TextReveal>
           <TextReveal delay={0.1}><h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white">Organizations that book Ray</h2></TextReveal>
         </div>
-        <StaggerContainer className="flex flex-wrap items-center justify-center gap-4">
-          {allClients.map((client) => (
-            <StaggerItem key={client}>
-              <motion.div
-                whileHover={{ scale: 1.05, boxShadow: '0 0 35px rgba(90,122,43,0.45), 0 0 80px rgba(90,122,43,0.2)' }}
-                className="bg-dark-2 border border-green/30 shadow-[0_0_25px_rgba(90,122,43,0.35),0_0_60px_rgba(90,122,43,0.15)] px-6 py-4 cursor-default"
-              >
-                <span className="text-white text-sm font-bold uppercase tracking-wider">{client}</span>
-              </motion.div>
+        <StaggerContainer className="flex flex-wrap items-center justify-center gap-8 md:gap-12 mb-10">
+          {clientLogos.map(({ name, src }) => (
+            <StaggerItem key={name}>
+              <motion.img
+                src={src}
+                alt={name}
+                className="h-10 md:h-14 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
+                whileHover={{ scale: 1.1 }}
+              />
             </StaggerItem>
           ))}
         </StaggerContainer>
+        <div className="flex flex-wrap items-center justify-center gap-4">
+          {textClients.map((client) => (
+            <span key={client} className="text-gray-3 text-xs font-bold uppercase tracking-widest">{client}</span>
+          ))}
+        </div>
       </Section>
 
       {/* CTA */}

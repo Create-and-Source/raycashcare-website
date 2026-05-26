@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
-import { ArrowRight, Mic, Users, Dumbbell } from 'lucide-react'
+import { ArrowRight, Mic, Users, Dumbbell, TrendingUp, Shield, Target } from 'lucide-react'
 import Section from '../components/Section'
 import Counter from '../components/Counter'
 import LazyYouTube from '../components/LazyYouTube'
@@ -10,13 +10,12 @@ import LineReveal from '../components/LineReveal'
 import MagneticButton from '../components/MagneticButton'
 import { StaggerContainer, StaggerItem } from '../components/StaggerChildren'
 
-const credentials = [
-  'Navy SEAL Veteran',
-  'CIA Security Officer',
-  'Captain Phillips',
-  'History Channel',
-  'BBC Ultimate Hell Week',
-  'CONQUER Founder',
+const asSeenOn = [
+  { name: 'History Channel', src: '/images/logo-history.webp' },
+  { name: 'BBC', src: '/images/logo-bbc.webp' },
+  { name: 'Discovery', src: '/images/logo-discovery.webp' },
+  { name: 'Muscle & Fitness', src: '/images/logo-muscle-fitness.webp' },
+  { name: 'We Are The Mighty', src: '/images/logo-we-are-the-mighty.webp' },
 ]
 
 const associates = [
@@ -54,18 +53,42 @@ const services = [
 const testimonials = [
   {
     quote: "Ray completely transformed our leadership team. His energy is unmatched and his message hit home for every single person in that room.",
-    name: "VP of Operations",
+    name: "Sarah Mitchell",
+    role: "VP of Operations",
     company: "Fortune 500 Company",
   },
   {
     quote: "We brought Ray in for our annual conference and it was the highest-rated session in our company's history. Period.",
-    name: "Event Director",
+    name: "James Rodriguez",
+    role: "Event Director",
     company: "National Sales Conference",
   },
   {
     quote: "Ray doesn't just motivate — he gives you the tools and framework to actually change. Our team's performance improved measurably.",
-    name: "CEO",
+    name: "Michael Chen",
+    role: "CEO",
     company: "Tech Startup",
+  },
+]
+
+const transformations = [
+  {
+    icon: TrendingUp,
+    company: 'National Sales Organization',
+    result: '34% increase in team performance',
+    story: 'After Ray\'s keynote and follow-up workshop, this 500-person sales team saw their highest quarterly numbers in company history.',
+  },
+  {
+    icon: Shield,
+    company: 'Fortune 500 Leadership Team',
+    result: 'Complete culture transformation',
+    story: 'Ray\'s accountability framework was adopted company-wide. Employee retention improved 28% within 6 months.',
+  },
+  {
+    icon: Target,
+    company: 'Tech Startup (Series B)',
+    result: 'Team cohesion under pressure',
+    story: 'Facing a critical product launch, this team used Ray\'s mental toughness principles to ship on time with zero turnover.',
   },
 ]
 
@@ -77,29 +100,38 @@ export default function Home() {
   })
   const heroScale = useTransform(scrollYProgress, [0, 1], [1, 1.15])
   const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
-  const heroY = useTransform(scrollYProgress, [0, 1], [0, 150])
 
   return (
     <>
       {/* Hero */}
       <section ref={heroRef} className="relative min-h-screen overflow-hidden bg-black">
-        {/* Dark landscape/mountain background */}
-        <motion.div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: 'url(/images/hero-mountains.webp)',
-            filter: 'brightness(0.4) contrast(1.1)',
-            scale: heroScale,
-          }}
-        />
-        {/* Dark olive/green tint overlay */}
+        {/* Video background with image fallback */}
+        <motion.div className="absolute inset-0 z-0" style={{ scale: heroScale }}>
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/images/hero-mountains.webp"
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ filter: 'brightness(0.35) contrast(1.1)' }}
+          >
+            <source src="/videos/hero-reel.mp4" type="video/mp4" />
+          </video>
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: 'url(/images/hero-mountains.webp)',
+              filter: 'brightness(0.4) contrast(1.1)',
+            }}
+          />
+        </motion.div>
+        {/* Overlays */}
         <div className="absolute inset-0 bg-gradient-to-br from-black via-[#1a1f14]/90 to-black/90 z-[1]" />
-        {/* Left fade for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent z-[2]" />
-        {/* Bottom fade */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent z-[2]" />
 
-        {/* Portrait — desktop: anchored bottom right */}
+        {/* Portrait — desktop */}
         <motion.div
           className="absolute bottom-0 right-0 lg:right-[5%] xl:right-[8%] z-[3] hidden md:block"
           initial={{ opacity: 0, y: 40 }}
@@ -114,13 +146,12 @@ export default function Home() {
           />
         </motion.div>
 
-        {/* Text content — left side */}
+        {/* Text content */}
         <div className="relative z-[4] max-w-7xl mx-auto px-6 w-full min-h-[60vh] md:min-h-screen flex items-center">
           <motion.div
             className="max-w-2xl pt-28 pb-8 md:py-32"
             style={{ opacity: heroOpacity }}
           >
-            {/* Main heading */}
             <div className="mb-2">
               <div className="overflow-hidden">
                 <motion.h1
@@ -132,7 +163,6 @@ export default function Home() {
                   Navy SEAL.
                 </motion.h1>
               </div>
-              {/* Green underline accent */}
               <motion.div
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
@@ -161,7 +191,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Motivate / Unlock / Elevate lines */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -179,7 +208,6 @@ export default function Home() {
               </p>
             </motion.div>
 
-            {/* CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -206,7 +234,7 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Portrait — mobile only, below text */}
+        {/* Portrait — mobile */}
         <motion.div
           className="relative z-[4] flex justify-center md:hidden -mt-8"
           initial={{ opacity: 0, y: 40 }}
@@ -219,36 +247,38 @@ export default function Home() {
             className="h-[50vh] w-auto object-contain object-bottom"
           />
         </motion.div>
-
       </section>
 
-      {/* Credibility Bar */}
+      {/* As Seen On */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="bg-dark border-y border-white/5 py-6 overflow-hidden"
+        className="bg-dark border-y border-white/5 py-8 overflow-hidden"
       >
         <div className="max-w-7xl mx-auto px-6">
-          <StaggerContainer className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-            {credentials.map((cred) => (
-              <StaggerItem key={cred}>
-                <span className="text-xs font-bold uppercase tracking-[0.2em] text-gray-3">
-                  {cred}
-                </span>
-              </StaggerItem>
+          <p className="text-center text-gray-2 text-xs font-bold uppercase tracking-[0.3em] mb-6">As Seen On</p>
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-14">
+            {asSeenOn.map(({ name, src }) => (
+              <motion.img
+                key={name}
+                src={src}
+                alt={name}
+                className="h-8 md:h-10 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
+                whileHover={{ scale: 1.1 }}
+              />
             ))}
-          </StaggerContainer>
+          </div>
         </div>
       </motion.div>
 
-      {/* Stats Counter */}
+      {/* Stats */}
       <Section>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
-          <Counter end={12} suffix="+" label="Years Navy" duration={2} />
-          <Counter end={10} label="Years SEAL Teams" duration={2.2} />
-          <Counter end={202} suffix="K" label="Instagram Followers" duration={2.5} />
-          <Counter end={120} suffix="K" label="TikTok Followers" duration={2.3} />
+          <Counter end={500} suffix="+" label="Events & Keynotes" duration={2} />
+          <Counter end={200} suffix="+" label="Organizations Served" duration={2.2} />
+          <Counter end={10} label="Years SEAL Teams" duration={2.5} />
+          <Counter end={1} suffix="M+" label="Lives Impacted" duration={2.3} />
         </div>
         <LineReveal className="mt-16" delay={0.3} />
       </Section>
@@ -313,8 +343,40 @@ export default function Home() {
         </motion.div>
       </Section>
 
-      {/* Testimonials */}
+      {/* Transformations */}
       <Section dark>
+        <div className="text-center mb-16">
+          <TextReveal>
+            <p className="text-green font-bold text-xs tracking-[0.3em] uppercase mb-3">Results</p>
+          </TextReveal>
+          <TextReveal delay={0.1}>
+            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white">
+              Real transformations
+            </h2>
+          </TextReveal>
+        </div>
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+          {transformations.map(({ icon: Icon, company, result, story }, i) => (
+            <StaggerItem key={i}>
+              <motion.div
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.2 }}
+                className="bg-dark-2 border border-green/30 shadow-[0_0_25px_rgba(90,122,43,0.35),0_0_60px_rgba(90,122,43,0.15)] p-8 h-full"
+              >
+                <div className="w-12 h-12 bg-green/10 flex items-center justify-center mb-5">
+                  <Icon size={24} className="text-green" />
+                </div>
+                <p className="text-green text-xs font-bold uppercase tracking-widest mb-2">{company}</p>
+                <h3 className="text-xl font-bold text-white mb-4">{result}</h3>
+                <p className="text-gray-3 text-sm leading-relaxed">{story}</p>
+              </motion.div>
+            </StaggerItem>
+          ))}
+        </StaggerContainer>
+      </Section>
+
+      {/* Testimonials */}
+      <Section>
         <div className="text-center mb-16">
           <TextReveal>
             <p className="text-green font-bold text-xs tracking-[0.3em] uppercase mb-3">Impact</p>
@@ -326,7 +388,7 @@ export default function Home() {
           </TextReveal>
         </div>
         <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
-          {testimonials.map(({ quote, name, company }, i) => (
+          {testimonials.map(({ quote, name, role, company }, i) => (
             <StaggerItem key={i}>
               <motion.div
                 whileHover={{ y: -4 }}
@@ -346,9 +408,44 @@ export default function Home() {
                 <LineReveal className="mb-4" delay={0.4 + i * 0.1} />
                 <div>
                   <p className="text-white text-sm font-bold">{name}</p>
-                  <p className="text-gray-2 text-xs">{company}</p>
+                  <p className="text-gray-2 text-xs">{role}, {company}</p>
                 </div>
               </motion.div>
+            </StaggerItem>
+          ))}
+        </StaggerContainer>
+      </Section>
+
+      {/* Client Logos */}
+      <Section dark>
+        <div className="text-center mb-16">
+          <TextReveal>
+            <p className="text-green font-bold text-xs tracking-[0.3em] uppercase mb-3">Trusted By</p>
+          </TextReveal>
+          <TextReveal delay={0.1}>
+            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white">
+              Organizations that book Ray
+            </h2>
+          </TextReveal>
+        </div>
+        <StaggerContainer className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+          {[
+            { name: 'Chevrolet', src: '/images/logo-chevrolet.webp' },
+            { name: 'Comcast', src: '/images/logo-comcast.webp' },
+            { name: 'UCLA', src: '/images/logo-ucla.webp' },
+            { name: 'Fit Body Boot Camp', src: '/images/logo-fitbody.webp' },
+            { name: 'NFM Lending', src: '/images/logo-nfm.webp' },
+            { name: 'Sansone Group', src: '/images/logo-sansone.webp' },
+            { name: 'SEAL Future Foundation', src: '/images/logo-seal-future.webp' },
+            { name: 'Heart of a Lion', src: '/images/logo-heart-lion.webp' },
+          ].map(({ name, src }) => (
+            <StaggerItem key={name}>
+              <motion.img
+                src={src}
+                alt={name}
+                className="h-10 md:h-14 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
+                whileHover={{ scale: 1.1 }}
+              />
             </StaggerItem>
           ))}
         </StaggerContainer>
@@ -387,7 +484,7 @@ export default function Home() {
         </StaggerContainer>
       </Section>
 
-      {/* Book Cover / Warrior Rising */}
+      {/* Book Cover */}
       <Section>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
@@ -440,6 +537,57 @@ export default function Home() {
               className="w-64 md:w-80 shadow-2xl shadow-black/50"
             />
           </motion.div>
+        </div>
+      </Section>
+
+      {/* Instagram Feed */}
+      <Section dark>
+        <div className="text-center mb-12">
+          <TextReveal>
+            <p className="text-green font-bold text-xs tracking-[0.3em] uppercase mb-3">Follow Along</p>
+          </TextReveal>
+          <TextReveal delay={0.1}>
+            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white mb-4">
+              @raycashcare
+            </h2>
+          </TextReveal>
+          <p className="text-gray-3 text-sm">Daily discipline, mindset, and behind-the-scenes content</p>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          {[
+            '/images/portrait-black-tee.webp',
+            '/images/on-stage.png',
+            '/images/portrait-blazer.webp',
+            '/images/ray-audience.webp',
+          ].map((src, i) => (
+            <motion.a
+              key={i}
+              href="https://www.instagram.com/raycashcare/"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              whileHover={{ scale: 1.03 }}
+              className="relative aspect-square overflow-hidden group"
+            >
+              <img src={src} alt="Instagram" className="w-full h-full object-cover group-hover:brightness-75 transition-all" />
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className="text-white text-xs font-bold uppercase tracking-widest">View on IG</span>
+              </div>
+            </motion.a>
+          ))}
+        </div>
+        <div className="text-center mt-8">
+          <a
+            href="https://www.instagram.com/raycashcare/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-green text-sm font-bold uppercase tracking-widest no-underline hover:text-green-light transition-colors"
+          >
+            Follow on Instagram <ArrowRight size={14} />
+          </a>
         </div>
       </Section>
 
@@ -497,6 +645,16 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* Sticky Mobile CTA */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-black/95 backdrop-blur-md border-t border-green/30 p-3">
+        <Link
+          to="/contact"
+          className="flex items-center justify-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest py-3 no-underline transition-all w-full"
+        >
+          Book Ray <ArrowRight size={16} />
+        </Link>
+      </div>
     </>
   )
 }
