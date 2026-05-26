@@ -43,9 +43,14 @@ export default function Speaking() {
     <>
       {/* Hero */}
       <section className="relative pt-32 pb-20 px-6 bg-black overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: 'url(/images/hero-mountains.webp)', filter: 'brightness(0.4)' }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40" />
         <div className="absolute right-0 top-0 bottom-0 w-1/3 hidden lg:block">
-          <img src="/images/portrait-blazer.webp" alt="Ray Cash Care" className="h-full w-full object-cover object-top opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
+          <img src="/images/portrait-blazer.webp" alt="Ray Cash Care" className="h-full w-full object-cover object-top opacity-25" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-transparent" />
         </div>
         <div className="relative max-w-7xl mx-auto">
           <motion.div

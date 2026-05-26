@@ -30,7 +30,11 @@ export default function Conquer() {
       <section className="relative pt-32 pb-20 px-6 bg-black overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/images/pullups-bw.png)', filter: 'brightness(0.12) contrast(1.2)' }}
+          style={{ backgroundImage: 'url(/images/hero-mountains.webp)', filter: 'brightness(0.35)' }}
+        />
+        <div
+          className="absolute inset-0 bg-cover bg-center mix-blend-overlay"
+          style={{ backgroundImage: 'url(/images/pullups-bw.png)', filter: 'brightness(0.3) contrast(1.2)', opacity: 0.4 }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/40" />
         <div className="relative max-w-7xl mx-auto">

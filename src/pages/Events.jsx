@@ -39,7 +39,7 @@ export default function Events() {
       <section className="relative pt-32 pb-20 px-6 bg-black overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/images/q-course.webp)', filter: 'brightness(0.1) contrast(1.2)' }}
+          style={{ backgroundImage: 'url(/images/q-course-wide.webp)', filter: 'brightness(0.15) contrast(1.2)' }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/60" />
         <div className="relative max-w-7xl mx-auto">

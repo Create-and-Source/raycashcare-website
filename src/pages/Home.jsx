@@ -19,6 +19,17 @@ const credentials = [
   'CONQUER Founder',
 ]
 
+const associates = [
+  { name: 'Pete Hegseth', title: 'Fox News Host', src: '/images/celeb-pete-hegseth.webp' },
+  { name: 'Tim Kennedy', title: 'MMA Fighter / Green Beret', src: '/images/celeb-tim-kennedy.webp' },
+  { name: 'Evan Hafer', title: 'Black Rifle Coffee CEO', src: '/images/celeb-evan-hafer.webp' },
+  { name: 'Kid Rock', title: 'Musician', src: '/images/celeb-kid-rock.webp' },
+  { name: 'Jim Mora', title: 'UCLA Head Coach', src: '/images/celeb-jim-mora.webp' },
+  { name: 'John Daly', title: 'PGA Champion', src: '/images/celeb-john-daly.webp' },
+  { name: 'Ryan Stewman', title: 'Sales Coach', src: '/images/celeb-ryan-stewman.webp' },
+  { name: 'Bedros Keuilian', title: 'Fit Body Boot Camp CEO', src: '/images/celeb-bedros.webp' },
+]
+
 const services = [
   {
     icon: Mic,
@@ -76,8 +87,8 @@ export default function Home() {
         <motion.div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/images/on-stage.png)',
-            filter: 'brightness(0.08) contrast(1.2) saturate(0.3)',
+            backgroundImage: 'url(/images/hero-mountains.webp)',
+            filter: 'brightness(0.4) contrast(1.1)',
             scale: heroScale,
           }}
         />
@@ -334,6 +345,39 @@ export default function Home() {
                   <p className="text-white text-sm font-bold">{name}</p>
                   <p className="text-gray-2 text-xs">{company}</p>
                 </div>
+              </motion.div>
+            </StaggerItem>
+          ))}
+        </StaggerContainer>
+      </Section>
+
+      {/* Associates */}
+      <Section>
+        <div className="text-center mb-16">
+          <TextReveal>
+            <p className="text-green font-bold text-xs tracking-[0.3em] uppercase mb-3">Inner Circle</p>
+          </TextReveal>
+          <TextReveal delay={0.1}>
+            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white">
+              The company he keeps
+            </h2>
+          </TextReveal>
+        </div>
+        <StaggerContainer className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+          {associates.map(({ name, title, src }) => (
+            <StaggerItem key={name}>
+              <motion.div
+                whileHover={{ y: -4, borderColor: 'rgba(90,122,43,0.3)' }}
+                transition={{ duration: 0.2 }}
+                className="bg-dark-2 border border-white/5 p-6 text-center"
+              >
+                <img
+                  src={src}
+                  alt={name}
+                  className="w-20 h-20 rounded-full object-cover mx-auto mb-4 border-2 border-white/10"
+                />
+                <p className="text-white text-sm font-bold">{name}</p>
+                <p className="text-gray-2 text-xs mt-1">{title}</p>
               </motion.div>
             </StaggerItem>
           ))}

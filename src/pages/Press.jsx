@@ -67,8 +67,13 @@ export default function Press() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-20 px-6 bg-black">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative pt-32 pb-20 px-6 bg-black overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: 'url(/images/hero-mountains.webp)', filter: 'brightness(0.35)' }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/40" />
+        <div className="relative max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -155,6 +160,43 @@ export default function Press() {
           ))}
         </div>
       </Section>
+
+      {/* Podcast Feature Image */}
+      <section className="relative py-20 px-6 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: 'url(/images/podcast-bedros.webp)', filter: 'brightness(0.2) contrast(1.2)' }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/50" />
+        <div className="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <p className="text-green font-bold text-xs tracking-[0.3em] uppercase mb-3">On Air</p>
+            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-white mb-4">
+              100+ podcast appearances
+            </h2>
+            <p className="text-gray-3 leading-relaxed">
+              Ray has been a guest on over 100 podcasts, sharing his story and message with millions of listeners.
+              From military-focused shows to business and entrepreneurship podcasts, Ray brings raw authenticity
+              and actionable wisdom to every conversation.
+            </p>
+          </div>
+          <div className="grid grid-cols-3 gap-4">
+            {[
+              { src: '/images/podcast-drinkin-bros.webp', name: "Drinkin' Bros" },
+              { src: '/images/podcast-modern-warrior.webp', name: 'Modern Warrior' },
+              { src: '/images/podcast-money-mondays.jpg', name: 'Money Mondays' },
+            ].map(({ src, name }) => (
+              <motion.div
+                key={name}
+                whileHover={{ scale: 1.05 }}
+                className="bg-dark-2 border border-white/10 rounded-lg overflow-hidden"
+              >
+                <img src={src} alt={name} className="w-full aspect-square object-cover" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Podcasts & Interviews */}
       <Section dark>
