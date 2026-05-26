@@ -39,9 +39,9 @@ export default function Speaking() {
           style={{ backgroundImage: 'url(/images/hero-mountains.webp)', filter: 'brightness(0.7)' }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
-        <div className="absolute right-0 top-0 bottom-0 w-2/5 hidden lg:block">
-          <img src="/images/portrait-blazer.webp" alt="Ray Cash Care" className="h-full w-full object-cover object-top opacity-50" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-transparent" />
+        <div className="absolute right-0 top-0 bottom-0 w-[45%] hidden md:block">
+          <img src="/images/portrait-blazer.webp" alt="Ray Cash Care" className="h-full w-full object-contain object-bottom opacity-80" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-transparent" />
         </div>
         <div className="relative max-w-7xl mx-auto">
           <motion.div
@@ -66,7 +66,7 @@ export default function Speaking() {
               <MagneticButton>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-[0_0_120px_rgba(90,122,43,1),0_0_300px_rgba(90,122,43,0.6),0_0_500px_rgba(90,122,43,0.3)]"
+                  className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-[0_0_5px_rgba(90,122,43,0.2)]"
                 >
                   Inquire About Booking <ArrowRight size={16} />
                 </Link>
@@ -172,7 +172,7 @@ export default function Speaking() {
             <MagneticButton>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-[0_0_120px_rgba(90,122,43,1),0_0_300px_rgba(90,122,43,0.6),0_0_500px_rgba(90,122,43,0.3)]"
+                className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-[0_0_5px_rgba(90,122,43,0.2)]"
               >
                 Book Ray Now <ArrowRight size={16} />
               </Link>

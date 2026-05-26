@@ -54,7 +54,7 @@ export default function Conquer() {
                   href="https://raycashcarecommunity.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-[0_0_120px_rgba(90,122,43,1),0_0_300px_rgba(90,122,43,0.6),0_0_500px_rgba(90,122,43,0.3)]"
+                  className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-[0_0_5px_rgba(90,122,43,0.2)]"
                 >
                   Join CONQUER <ArrowRight size={16} />
                 </a>
@@ -143,7 +143,7 @@ export default function Conquer() {
                 href="https://raycashcarecommunity.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-[0_0_120px_rgba(90,122,43,1),0_0_300px_rgba(90,122,43,0.6),0_0_500px_rgba(90,122,43,0.3)]"
+                className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-[0_0_5px_rgba(90,122,43,0.2)]"
               >
                 Join CONQUER Now <ArrowRight size={16} />
               </a>

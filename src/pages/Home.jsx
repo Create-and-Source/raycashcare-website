@@ -189,7 +189,7 @@ export default function Home() {
               <MagneticButton>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-[0_0_120px_rgba(90,122,43,1),0_0_300px_rgba(90,122,43,0.6),0_0_500px_rgba(90,122,43,0.3)]"
+                  className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-[0_0_5px_rgba(90,122,43,0.2)]"
                 >
                   Contact Ray <ArrowRight size={16} />
                 </Link>
@@ -267,7 +267,7 @@ export default function Home() {
             <StaggerItem key={title}>
               <Link
                 to={link}
-                className="group block bg-dark-2 border border-green/20 p-8 no-underline transition-all hover:-translate-y-1 shadow-[0_0_3px_rgba(90,122,43,0.15)] hover:shadow-[0_0_120px_rgba(90,122,43,1),0_0_300px_rgba(90,122,43,0.6),0_0_500px_rgba(90,122,43,0.3)]"
+                className="group block bg-dark-2 border border-green/20 p-8 no-underline transition-all hover:-translate-y-1 shadow-[0_0_3px_rgba(90,122,43,0.15)] hover:shadow-[0_0_5px_rgba(90,122,43,0.2)]"
               >
                 <motion.div
                   whileHover={{ rotate: [0, -10, 10, 0] }}
@@ -416,7 +416,7 @@ export default function Home() {
               <MagneticButton>
                 <a
                   href="#"
-                  className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-[0_0_120px_rgba(90,122,43,1),0_0_300px_rgba(90,122,43,0.6),0_0_500px_rgba(90,122,43,0.3)]"
+                  className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-[0_0_5px_rgba(90,122,43,0.2)]"
                 >
                   Get the Book <ArrowRight size={16} />
                 </a>
@@ -478,7 +478,7 @@ export default function Home() {
             <MagneticButton>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-[0_0_120px_rgba(90,122,43,1),0_0_300px_rgba(90,122,43,0.6),0_0_500px_rgba(90,122,43,0.3)]"
+                className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-[0_0_5px_rgba(90,122,43,0.2)]"
               >
                 Book Ray Now <ArrowRight size={16} />
               </Link>
