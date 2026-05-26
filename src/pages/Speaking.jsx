@@ -83,23 +83,24 @@ export default function Speaking() {
           <TextReveal><p className="text-green font-bold text-xs tracking-[0.3em] uppercase mb-3">Topics</p></TextReveal>
           <TextReveal delay={0.1}><h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white">What Ray speaks on</h2></TextReveal>
         </div>
-        <StaggerContainer className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">
+        <StaggerContainer className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8 overflow-hidden">
           {topics.map(({ icon: Icon, title, desc }) => (
             <StaggerItem key={title}>
               <motion.div
                 whileHover={{ y: -4, borderColor: 'rgba(90,122,43,0.6)', boxShadow: '0 0 35px rgba(90,122,43,0.45), 0 0 80px rgba(90,122,43,0.2)' }}
                 transition={{ duration: 0.2 }}
-                className="bg-dark-2 border border-green/30 p-8 h-full shadow-[0_0_25px_rgba(90,122,43,0.35),0_0_60px_rgba(90,122,43,0.15)]"
+                className="bg-dark-2 border border-green/30 p-4 md:p-8 h-full shadow-[0_0_25px_rgba(90,122,43,0.35),0_0_60px_rgba(90,122,43,0.15)]"
               >
                 <motion.div
                   whileHover={{ rotate: [0, -10, 10, 0] }}
                   transition={{ duration: 0.4 }}
-                  className="w-12 h-12 bg-green/10 flex items-center justify-center mb-5"
+                  className="w-10 h-10 md:w-12 md:h-12 bg-green/10 flex items-center justify-center mb-3 md:mb-5"
                 >
-                  <Icon size={24} className="text-green" />
+                  <Icon size={20} className="text-green md:hidden" />
+                  <Icon size={24} className="text-green hidden md:block" />
                 </motion.div>
-                <h3 className="text-lg font-bold uppercase tracking-wide text-white mb-3">{title}</h3>
-                <p className="text-gray-3 text-sm leading-relaxed">{desc}</p>
+                <h3 className="text-sm md:text-lg font-bold uppercase tracking-wide text-white mb-2 md:mb-3">{title}</h3>
+                <p className="text-gray-3 text-xs md:text-sm leading-relaxed">{desc}</p>
               </motion.div>
             </StaggerItem>
           ))}
