@@ -71,71 +71,108 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section ref={heroRef} className="relative min-h-screen flex items-end overflow-hidden bg-black">
-        {/* Background image — on stage */}
+      <section ref={heroRef} className="relative min-h-screen overflow-hidden bg-black">
+        {/* Dark landscape/mountain background */}
         <motion.div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: 'url(/images/on-stage.png)',
-            filter: 'brightness(0.15) contrast(1.3) saturate(0.8)',
+            filter: 'brightness(0.08) contrast(1.2) saturate(0.3)',
             scale: heroScale,
           }}
         />
-        {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent z-[1]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent z-[1]" />
+        {/* Dark olive/green tint overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#1a1f14]/80 to-black/90 z-[1]" />
+        {/* Left fade for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent z-[2]" />
+        {/* Bottom fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent z-[2]" />
 
-        {/* Content grid — text left, portrait right */}
-        <div className="relative z-20 max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 items-end gap-8 pb-16 pt-32 lg:pt-0 lg:pb-0">
-          {/* Left — Text */}
+        {/* Portrait — anchored bottom right, large */}
+        <motion.div
+          className="absolute bottom-0 right-0 lg:right-[5%] xl:right-[8%] z-[3] hidden md:block"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 1.8, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <motion.img
+            src="/images/hero-portrait.webp"
+            alt="Ray Cash Care"
+            className="h-[85vh] max-h-[900px] w-auto object-contain object-bottom"
+            style={{ scale: heroScale }}
+          />
+        </motion.div>
+
+        {/* Text content — left side */}
+        <div className="relative z-[4] max-w-7xl mx-auto px-6 w-full min-h-screen flex items-center">
           <motion.div
-            className="flex flex-col justify-center lg:min-h-screen py-12"
+            className="max-w-2xl py-32"
             style={{ opacity: heroOpacity }}
           >
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.6 }}
-              className="text-green font-bold text-sm tracking-[0.3em] uppercase mb-6"
-            >
-              Navy SEAL Veteran &bull; Speaker &bull; Coach
-            </motion.p>
-
-            <div className="overflow-hidden mb-2">
-              <motion.h1
-                initial={{ y: '100%' }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.8, delay: 1.8, ease: [0.16, 1, 0.3, 1] }}
-                className="text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-[0.85] tracking-tight text-white"
-              >
-                Conquer
-              </motion.h1>
+            {/* Main heading */}
+            <div className="mb-2">
+              <div className="overflow-hidden">
+                <motion.h1
+                  initial={{ y: '100%' }}
+                  animate={{ y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.6, ease: [0.16, 1, 0.3, 1] }}
+                  className="text-5xl md:text-7xl lg:text-[5.5rem] font-black uppercase leading-[0.9] tracking-tight text-white"
+                >
+                  Navy SEAL.
+                </motion.h1>
+              </div>
+              {/* Green underline accent */}
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.6, delay: 2.2, ease: [0.16, 1, 0.3, 1] }}
+                className="h-1 bg-green w-48 md:w-64 origin-left mt-1 mb-2"
+              />
+              <div className="overflow-hidden">
+                <motion.h1
+                  initial={{ y: '100%' }}
+                  animate={{ y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.9, ease: [0.16, 1, 0.3, 1] }}
+                  className="text-5xl md:text-7xl lg:text-[5.5rem] font-black uppercase leading-[0.9] tracking-tight text-white"
+                >
+                  Motivational
+                </motion.h1>
+              </div>
+              <div className="overflow-hidden">
+                <motion.h1
+                  initial={{ y: '100%' }}
+                  animate={{ y: 0 }}
+                  transition={{ duration: 0.8, delay: 2.1, ease: [0.16, 1, 0.3, 1] }}
+                  className="text-5xl md:text-7xl lg:text-[5.5rem] font-black uppercase leading-[0.9] tracking-tight text-white"
+                >
+                  Speaker.
+                </motion.h1>
+              </div>
             </div>
-            <div className="overflow-hidden mb-8">
-              <motion.h1
-                initial={{ y: '100%' }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.8, delay: 2.0, ease: [0.16, 1, 0.3, 1] }}
-                className="text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-[0.85] tracking-tight text-green"
-              >
-                Your Limits
-              </motion.h1>
-            </div>
 
-            <motion.p
+            {/* Motivate / Unlock / Elevate lines */}
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 2.3 }}
-              className="text-lg md:text-xl text-gray-3 max-w-xl mb-10 leading-relaxed"
+              transition={{ duration: 0.8, delay: 2.5 }}
+              className="mt-8 mb-10 space-y-1"
             >
-              12 years in the Navy. 10 on SEAL teams. 8 years protecting CIA operatives overseas.
-              Now Ray "Cash" Care helps organizations and individuals unlock elite-level performance.
-            </motion.p>
+              <p className="text-lg md:text-xl text-white/90 leading-relaxed">
+                <span className="text-green font-bold">Motivate</span> your team
+              </p>
+              <p className="text-lg md:text-xl text-white/90 leading-relaxed">
+                <span className="text-green font-bold">Unlock</span> their true potential
+              </p>
+              <p className="text-lg md:text-xl text-white/90 leading-relaxed">
+                <span className="text-green font-bold">Elevate</span> your company to the next level
+              </p>
+            </motion.div>
 
+            {/* CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 2.6 }}
+              transition={{ duration: 0.6, delay: 2.8 }}
               className="flex flex-col sm:flex-row items-start gap-4"
             >
               <MagneticButton>
@@ -143,33 +180,18 @@ export default function Home() {
                   to="/contact"
                   className="inline-flex items-center gap-2 bg-green hover:bg-green-light text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:shadow-lg hover:shadow-green/20"
                 >
-                  Book Ray <ArrowRight size={16} />
+                  Contact Ray <ArrowRight size={16} />
                 </Link>
               </MagneticButton>
               <MagneticButton>
                 <Link
-                  to="/conquer"
-                  className="inline-flex items-center gap-2 border border-white/20 hover:border-white/40 text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:bg-white/5"
+                  to="/about"
+                  className="inline-flex items-center gap-2 border border-white/30 hover:border-white/50 text-white font-bold text-sm uppercase tracking-widest px-8 py-4 no-underline transition-all hover:bg-white/5"
                 >
-                  Join CONQUER
+                  About Ray Cash Care
                 </Link>
               </MagneticButton>
             </motion.div>
-          </motion.div>
-
-          {/* Right — Portrait cutout */}
-          <motion.div
-            className="hidden lg:flex items-end justify-center"
-            initial={{ opacity: 0, x: 60 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 2.2, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <motion.img
-              src="/images/hero-portrait.webp"
-              alt="Ray Cash Care"
-              className="w-full max-w-md xl:max-w-lg object-contain drop-shadow-[0_0_60px_rgba(90,122,43,0.15)]"
-              style={{ scale: heroScale }}
-            />
           </motion.div>
         </div>
 
@@ -178,7 +200,7 @@ export default function Home() {
           className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, y: [0, 8, 0] }}
-          transition={{ opacity: { delay: 3 }, y: { repeat: Infinity, duration: 2 } }}
+          transition={{ opacity: { delay: 3.2 }, y: { repeat: Infinity, duration: 2 } }}
         >
           <div className="w-6 h-10 border-2 border-white/20 rounded-full flex items-start justify-center p-1.5">
             <div className="w-1.5 h-2.5 bg-green rounded-full" />
