@@ -220,17 +220,6 @@ export default function Home() {
           />
         </motion.div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, y: [0, 8, 0] }}
-          transition={{ opacity: { delay: 3.2 }, y: { repeat: Infinity, duration: 2 } }}
-        >
-          <div className="w-6 h-10 border-2 border-white/20 rounded-full flex items-start justify-center p-1.5">
-            <div className="w-1.5 h-2.5 bg-green rounded-full" />
-          </div>
-        </motion.div>
       </section>
 
       {/* Credibility Bar */}
