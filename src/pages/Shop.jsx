@@ -46,7 +46,7 @@ export default function Shop() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="group bg-dark-2 border border-green/40 shadow-[0_0_20px_rgba(90,122,43,0.15)] hover:border-green/30 transition-all cursor-pointer"
+              className="group bg-dark-2 border border-green/40 shadow-[0_0_8px_rgba(90,122,43,0.2)] hover:border-green/30 transition-all cursor-pointer"
             >
               <div className="aspect-square bg-dark-3 flex items-center justify-center relative overflow-hidden">
                 <ShoppingBag size={40} className="text-gray-2" />
