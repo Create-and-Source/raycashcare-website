@@ -79,7 +79,7 @@ export default function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="bg-dark-2 border border-green/20 shadow-lg shadow-green/10 aspect-[3/4] overflow-hidden"
+            className="bg-dark-2 border border-green/40 shadow-[0_0_20px_rgba(90,122,43,0.3)] aspect-[3/4] overflow-hidden"
           >
             <ParallaxImage
               src="/images/portrait-black.webp"
@@ -184,7 +184,7 @@ export default function About() {
               <motion.div
                 whileHover={{ y: -6, borderColor: 'rgba(90,122,43,0.3)' }}
                 transition={{ duration: 0.2 }}
-                className="bg-dark-2 border border-green/20 shadow-lg shadow-green/10 p-8 text-center h-full"
+                className="bg-dark-2 border border-green/40 shadow-[0_0_20px_rgba(90,122,43,0.3)] p-8 text-center h-full"
               >
                 <motion.div
                   whileHover={{ rotate: 360 }}

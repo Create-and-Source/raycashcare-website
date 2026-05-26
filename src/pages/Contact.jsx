@@ -202,7 +202,7 @@ export default function Contact() {
 
           {/* Sidebar */}
           <div className="space-y-8">
-            <div className="bg-dark-2 border border-green/20 shadow-lg shadow-green/10 p-8">
+            <div className="bg-dark-2 border border-green/40 shadow-[0_0_20px_rgba(90,122,43,0.3)] p-8">
               <h3 className="text-lg font-bold text-white mb-4 uppercase">Get in Touch</h3>
               <div className="space-y-4">
                 <a
@@ -230,7 +230,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-dark-2 border border-green/20 shadow-lg shadow-green/10 p-8">
+            <div className="bg-dark-2 border border-green/40 shadow-[0_0_20px_rgba(90,122,43,0.3)] p-8">
               <h3 className="text-lg font-bold text-white mb-4 uppercase">Speaker Bureaus</h3>
               <div className="space-y-3">
                 {[

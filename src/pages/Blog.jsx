@@ -103,7 +103,7 @@ export default function Blog() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="group bg-dark-2 border border-green/20 shadow-lg shadow-green/10 hover:border-green/30 no-underline transition-all"
+              className="group bg-dark-2 border border-green/40 shadow-[0_0_20px_rgba(90,122,43,0.3)] hover:border-green/30 no-underline transition-all"
             >
               <div className="h-48 bg-dark-3 flex items-center justify-center">
                 <span className="text-gray-2 text-xs uppercase tracking-widest">{category}</span>
