@@ -60,9 +60,9 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
           {/* Brand */}
-          <div>
+          <div className="col-span-2 md:col-span-1">
             <h3 className="text-xl font-black uppercase tracking-tight text-white mb-4">
               Ray <span className="text-green">"Cash"</span> Care
             </h3>
