@@ -264,7 +264,7 @@ export default function Home() {
                 key={name}
                 src={src}
                 alt={name}
-                className="h-8 md:h-10 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
+                className="h-10 md:h-14 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
                 whileHover={{ scale: 1.1 }}
               />
             ))}
@@ -572,7 +572,7 @@ export default function Home() {
               whileHover={{ scale: 1.03 }}
               className="relative aspect-square overflow-hidden group"
             >
-              <img src={src} alt="Instagram" className="w-full h-full object-cover group-hover:brightness-75 transition-all" />
+              <img src={src} alt="Instagram" className="w-full h-full object-cover object-top group-hover:brightness-75 transition-all" />
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                 <span className="text-white text-xs font-bold uppercase tracking-widest">View on IG</span>
               </div>
