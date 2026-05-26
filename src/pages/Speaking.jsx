@@ -83,7 +83,7 @@ export default function Speaking() {
           <TextReveal><p className="text-green font-bold text-xs tracking-[0.3em] uppercase mb-3">Topics</p></TextReveal>
           <TextReveal delay={0.1}><h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white">What Ray speaks on</h2></TextReveal>
         </div>
-        <StaggerContainer className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
           {topics.map(({ icon: Icon, title, desc }) => (
             <StaggerItem key={title}>
               <motion.div
