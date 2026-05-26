@@ -32,9 +32,6 @@ export default function About() {
           style={{ backgroundImage: 'url(/images/hero-mountains.webp)', filter: 'brightness(0.7)' }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
-        <div className="absolute bottom-0 right-0 hidden lg:block">
-          <img src="/images/portrait-blue-blazer.webp" alt="Ray Cash Care" className="h-[500px] object-contain opacity-40" />
-        </div>
         <div className="relative max-w-7xl mx-auto">
           <div className="max-w-3xl">
             <motion.p
